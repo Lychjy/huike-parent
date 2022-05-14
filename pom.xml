@@ -5,12 +5,25 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.huike</groupId>
-    <artifactId>huike</artifactId>
+    <artifactId>huike-parent</artifactId>
     <version>3.4.0</version>
+    <packaging>pom</packaging>
 
-    <name>huike</name>
-    <url>http://www.huike.vip</url>
-    <description>会客crm管理系统</description>
+    <name>huike-parent</name>
+    <description>汇客crm管理系统</description>
+
+    <modules>
+        <module>huike-admin</module>
+        <module>huike-framework</module>
+        <module>huike-system</module>
+        <module>huike-common</module>
+        <module>huike-clues</module>
+        <module>huike-business</module>
+        <module>huike-mybatis-review</module>
+        <module>huike-contract</module>
+        <module>huike-report</module>
+        <module>huike-task</module>
+    </modules>
 
     <properties>
         <huike.version>3.4.0</huike.version>
@@ -32,7 +45,7 @@
         <poi.version>4.1.2</poi.version>
         <velocity.version>1.7</velocity.version>
         <jwt.version>0.9.1</jwt.version>
-        <org.projectlombok.version>1.18.8</org.projectlombok.version>
+        <org.projectlombok.version>1.18.20</org.projectlombok.version>
         <miniio.version>8.3.3</miniio.version>
         <esay_excel.version>2.2.6</esay_excel.version>
         <xxl_job.version>2.1.0</xxl_job.version>
@@ -226,22 +239,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <modules>
-        <module>huike-admin</module>
-        <module>huike-framework</module>
-        <module>huike-system</module>
-        <module>huike-common</module>
-        <module>huike-clues</module>
-        <module>huike-business</module>
-        <module>huike-mybatis-review</module>
-        <module>huike-contract</module>
-        <module>huike-report</module>
-        <module>huike-task</module>
-    </modules>
-    <packaging>pom</packaging>
-
-
 
     <build>
         <extensions>
