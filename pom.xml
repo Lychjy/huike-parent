@@ -13,18 +13,29 @@
     <description>汇客crm管理系统</description>
 
     <modules>
+        <!--主工程-->
         <module>huike-admin</module>
+        <!--框架模块-->
         <module>huike-framework</module>
+        <!--系统模块-->
         <module>huike-system</module>
+        <!--公共模块-->
         <module>huike-common</module>
+        <!--线索模块-->
         <module>huike-clues</module>
+        <!--商机模块-->
         <module>huike-business</module>
+        <!--模块-->
         <module>huike-mybatis-review</module>
+        <!--合同模块-->
         <module>huike-contract</module>
+        <!--统计报表模块-->
         <module>huike-report</module>
+        <!--定时任务模块-->
         <module>huike-task</module>
     </modules>
 
+    <!--版本属性配置-->
     <properties>
         <huike.version>3.4.0</huike.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
