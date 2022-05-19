@@ -18,19 +18,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-        <!-- 通用工具-->
-        <dependency>
-            <groupId>com.huike</groupId>
-            <artifactId>huike-common</artifactId>
-        </dependency>
-        <dependency>
             <groupId>com.huike</groupId>
             <artifactId>huike-business</artifactId>
         </dependency>

@@ -15,17 +15,13 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
-    <description>
-        spring Task 定时任务
-    </description>
+    <description>spring Task 定时任务</description>
 
     <dependencies>
-
         <!-- 通用工具-->
         <dependency>
             <groupId>com.huike</groupId>
             <artifactId>huike-common</artifactId>
         </dependency>
-
     </dependencies>
 </project>
