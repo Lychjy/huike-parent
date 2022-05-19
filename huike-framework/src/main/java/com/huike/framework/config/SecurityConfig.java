@@ -20,8 +20,6 @@ import com.huike.framework.security.handle.LogoutSuccessHandlerImpl;
 
 /**
  * spring security配置
- * 
- * 
  */
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -30,7 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Autowired
     private UserDetailsService userDetailsService;
-    
+
     /**
      * 认证失败处理类
      */
@@ -54,7 +52,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Autowired
     private CorsFilter corsFilter;
-    
+
     /**
      * 解决 无法直接注入 AuthenticationManager
      *
@@ -122,10 +120,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/**/*.css",
                         "/**/*.js"
                 ).permitAll().
-                        antMatchers(
+                antMatchers(
                         //mybatis复习相关的接口全部放行,同学们可以通过postMan进行测试而不需要进行权限认证
                         "/review/**",
-                                "/review"
+                        "/review"
                 ).permitAll()
                 .antMatchers("/common/downloadByMinio**").permitAll()
                 .antMatchers("/profile/**").anonymous()
@@ -146,13 +144,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         httpSecurity.addFilterBefore(corsFilter, LogoutFilter.class);
     }
 
-    
+
     /**
      * 强散列哈希加密实现
      */
     @Bean
-    public BCryptPasswordEncoder bCryptPasswordEncoder()
-    {
+    public BCryptPasswordEncoder bCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
@@ -160,8 +157,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      * 身份认证接口
      */
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception
-    {
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder());
     }
 }

@@ -16,10 +16,10 @@ import javax.annotation.PostConstruct;
 import java.util.List;
 
 /**
- *  admin 处理策略
- *
+ * admin 处理策略
+ * <p>
  * 由admin来处理所有的线索导入和转商机的数据
- *
+ * <p>
  * 全部导入到admin 统一由admin来处理所有的线索
  * exchange 转商机的时候统一转换到admin，再由admin来统一分片商机
  */
@@ -53,7 +53,7 @@ public class AdminClueStrategy implements Rule {
             tbAssignRecord.setCreateTime(clue.getCreateTime());
             assignRecordMapper.insertAssignRecord(tbAssignRecord);
             return true;
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }

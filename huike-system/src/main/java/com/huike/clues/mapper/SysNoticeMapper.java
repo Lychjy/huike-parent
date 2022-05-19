@@ -1,19 +1,17 @@
 package com.huike.clues.mapper;
 
 import java.util.List;
+
 import com.huike.clues.domain.SysNotice;
 import org.apache.ibatis.annotations.Param;
 
 /**
  * 通知公告表 数据层
- * 
- * 
  */
-public interface SysNoticeMapper
-{
+public interface SysNoticeMapper {
     /**
      * 查询公告信息
-     * 
+     *
      * @param noticeId 公告ID
      * @return 公告信息
      */
@@ -21,7 +19,7 @@ public interface SysNoticeMapper
 
     /**
      * 查询公告列表
-     * 
+     *
      * @param notice 公告信息
      * @return 公告集合
      */
@@ -29,7 +27,7 @@ public interface SysNoticeMapper
 
     /**
      * 新增公告
-     * 
+     *
      * @param notice 公告信息
      * @return 结果
      */
@@ -38,6 +36,7 @@ public interface SysNoticeMapper
 
     /**
      * 公告id
+     *
      * @param noticeId
      * @return
      */

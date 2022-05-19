@@ -5,41 +5,50 @@
 <mapper namespace="com.huike.clues.mapper.TbRuleAssignMapper">
 
     <resultMap type="TbRuleAssign" id="TbRuleAssignResult">
-        <result property="id"    column="id"    />
-        <result property="ruleCondition"    column="rule_condition"    />
-        <result property="ruleExpression"    column="rule_expression"    />
-        <result property="assignObject"    column="assign_object"    />
-        <result property="assignType"    column="assign_type"    />
-        <result property="ruleOrder"    column="rule_order"    />
-        <result property="createBy"    column="create_by"    />
-        <result property="createTime"    column="create_time"    />
-        <result property="type"    column="type"    />
+        <result property="id" column="id"/>
+        <result property="ruleCondition" column="rule_condition"/>
+        <result property="ruleExpression" column="rule_expression"/>
+        <result property="assignObject" column="assign_object"/>
+        <result property="assignType" column="assign_type"/>
+        <result property="ruleOrder" column="rule_order"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="type" column="type"/>
         <collection property="rulesList" ofType="com.huike.clues.domain.TbRuleExpression" column="id"
                     select="com.huike.clues.mapper.TbRuleExpressionMapper.selectTbRuleExpressionByRuleId"/>
     </resultMap>
 
     <sql id="selectTbRuleAssignVo">
-        select id, rule_condition, rule_expression, assign_object, assign_type, rule_order, create_by, create_time,type from tb_rule_assign
+        select id,
+               rule_condition,
+               rule_expression,
+               assign_object,
+               assign_type,
+               rule_order,
+               create_by,
+               create_time,
+               type
+        from tb_rule_assign
     </sql>
 
-<!--    <sql id="selectTbRuleExpressionVo">-->
-<!--        select rule.id, rule_condition, rule_expression, assign_object, assign_type, rule_order, create_by, create_time-->
-<!--        from tb_rule_assign rule-->
-<!--        left join tb_rule_expression expression-->
-<!--        on expression.rule_id=rule.id-->
-<!--        order by rule.rule_order,expression.number-->
-<!--    </sql>-->
+    <!--    <sql id="selectTbRuleExpressionVo">-->
+    <!--        select rule.id, rule_condition, rule_expression, assign_object, assign_type, rule_order, create_by, create_time-->
+    <!--        from tb_rule_assign rule-->
+    <!--        left join tb_rule_expression expression-->
+    <!--        on expression.rule_id=rule.id-->
+    <!--        order by rule.rule_order,expression.number-->
+    <!--    </sql>-->
 
 
     <select id="selectTbRuleAssignList" parameterType="TbRuleAssign" resultMap="TbRuleAssignResult">
         <include refid="selectTbRuleAssignVo"/>
         <where>
-            <if test="ruleCondition != null  and ruleCondition != ''"> and rule_condition = #{ruleCondition}</if>
-            <if test="ruleExpression != null  and ruleExpression != ''"> and rule_expression = #{ruleExpression}</if>
-            <if test="assignObject != null  and assignObject != ''"> and assign_object = #{assignObject}</if>
-            <if test="assignType != null  and assignType != ''"> and assign_type = #{assignType}</if>
-            <if test="ruleOrder != null "> and rule_order = #{ruleOrder}</if>
-            <if test="type != null "> and type = #{type}</if>
+            <if test="ruleCondition != null  and ruleCondition != ''">and rule_condition = #{ruleCondition}</if>
+            <if test="ruleExpression != null  and ruleExpression != ''">and rule_expression = #{ruleExpression}</if>
+            <if test="assignObject != null  and assignObject != ''">and assign_object = #{assignObject}</if>
+            <if test="assignType != null  and assignType != ''">and assign_type = #{assignType}</if>
+            <if test="ruleOrder != null ">and rule_order = #{ruleOrder}</if>
+            <if test="type != null ">and type = #{type}</if>
         </where>
         order by rule_order,create_time
     </select>
@@ -94,7 +103,9 @@
     </update>
 
     <delete id="deleteTbRuleAssignById" parameterType="Long">
-        delete from tb_rule_assign where id = #{id}
+        delete
+        from tb_rule_assign
+        where id = #{id}
     </delete>
 
     <delete id="deleteTbRuleAssignByIds" parameterType="String">

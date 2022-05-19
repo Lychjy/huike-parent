@@ -5,29 +5,39 @@
 <mapper namespace="com.huike.clues.mapper.TbCourseMapper">
 
     <resultMap type="TbCourse" id="TbCourseResult">
-        <result property="id"    column="id"    />
-        <result property="name"    column="name"    />
-        <result property="subject"    column="subject"    />
-        <result property="price"    column="price"    />
-        <result property="applicablePerson"    column="applicable_person"    />
-        <result property="info"    column="info"    />
-        <result property="createTime"    column="create_time"    />
-        <result property="code"    column="code"    />
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="subject" column="subject"/>
+        <result property="price" column="price"/>
+        <result property="applicablePerson" column="applicable_person"/>
+        <result property="info" column="info"/>
+        <result property="createTime" column="create_time"/>
+        <result property="code" column="code"/>
     </resultMap>
 
     <sql id="selectTbCourseVo">
-        select id, name, subject, price, applicable_person, info, create_time,code from tb_course
+        select id,
+               name,
+               subject,
+               price,
+               applicable_person,
+               info,
+               create_time,
+               code
+        from tb_course
     </sql>
 
     <select id="selectTbCourseList" parameterType="TbCourse" resultMap="TbCourseResult">
         <include refid="selectTbCourseVo"/>
         <where>
-            <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
-            <if test="code != null  and code != ''"> and code like concat('%', #{code}, '%')</if>
-            <if test="subject != null  and subject != ''"> and subject = #{subject}</if>
-            <if test="price != null "> and price = #{price}</if>
-            <if test="applicablePerson != null  and applicablePerson != ''"> and applicable_person = #{applicablePerson}</if>
-            <if test="info != null  and info != ''"> and info = #{info}</if>
+            <if test="name != null  and name != ''">and name like concat('%', #{name}, '%')</if>
+            <if test="code != null  and code != ''">and code like concat('%', #{code}, '%')</if>
+            <if test="subject != null  and subject != ''">and subject = #{subject}</if>
+            <if test="price != null ">and price = #{price}</if>
+            <if test="applicablePerson != null  and applicablePerson != ''">and applicable_person =
+                #{applicablePerson}
+            </if>
+            <if test="info != null  and info != ''">and info = #{info}</if>
             <if test="params.beginCreateTime != null and params.beginCreateTime != ''"><!-- 开始创建时间 -->
                 and date_format(create_time,'%y%m%d') &gt;= date_format(#{params.beginCreateTime},'%y%m%d')
             </if>
@@ -79,7 +89,9 @@
     </update>
 
     <delete id="deleteTbCourseById" parameterType="Long">
-        delete from tb_course where id = #{id}
+        delete
+        from tb_course
+        where id = #{id}
     </delete>
 
     <delete id="deleteTbCourseByIds" parameterType="String">

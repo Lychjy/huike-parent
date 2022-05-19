@@ -12,12 +12,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ClueInfoVO extends TbClue{
+public class ClueInfoVO extends TbClue {
 
-	//线索归属
-	private String assignUserName;
-	
-	//归属时间
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm")
-	private Date lastAssignTime;
+    //线索归属
+    private String assignUserName;
+
+    //归属时间
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
+    private Date lastAssignTime;
 }

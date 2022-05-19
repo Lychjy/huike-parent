@@ -28,6 +28,7 @@ import com.huike.common.utils.SecurityUtils;
 
 /**
  * 商机跟进记录Controller
+ *
  * @date 2021-04-28
  */
 @RestController
@@ -45,7 +46,7 @@ public class TbBusinessTrackRecordController extends BaseController {
      */
     @PreAuthorize("@ss.hasPermi('business:record:list')")
     @GetMapping("/list")
-    public  AjaxResult list(@RequestParam("businessId")Long id){
+    public AjaxResult list(@RequestParam("businessId") Long id) {
 
         return null;
     }
@@ -56,7 +57,7 @@ public class TbBusinessTrackRecordController extends BaseController {
     @PreAuthorize("@ss.hasPermi('business:record:add')")
     @Log(title = "商机跟进记录", businessType = BusinessType.INSERT)
     @PostMapping
-    public AjaxResult add(@RequestBody BusinessTrackVo businessTrackVo){
+    public AjaxResult add(@RequestBody BusinessTrackVo businessTrackVo) {
         return null;
     }
 }

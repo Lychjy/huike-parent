@@ -7,7 +7,7 @@ public class LineSeriesVO {
 
     private String name;
 
-    private List<Object> data =new ArrayList<>();
+    private List<Object> data = new ArrayList<>();
 
     public String getName() {
         return name;

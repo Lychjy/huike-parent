@@ -14,24 +14,23 @@ public class RuleBusinessPoolTask {
     private ITbBusinessService businessService;
 
     //线程池回收回调
-    public void recovery(String id)
-    {
-        TbBusiness business= businessService.selectTbBusinessById(Long.valueOf(id));
-        if(business!=null){
+    public void recovery(String id) {
+        TbBusiness business = businessService.selectTbBusinessById(Long.valueOf(id));
+        if (business != null) {
             businessService.updateStatus(business.getId(),
                     TbBusiness.StatusType.RECOVERY.getValue());
         }
-        System.out.println("-------------recovery"+business );
+        System.out.println("-------------recovery" + business);
     }
 
 
     //线索池告警回调
-    public void warn(String id){
-        TbBusiness business= businessService.selectTbBusinessById(Long.valueOf(id));
-        if(business!=null){
+    public void warn(String id) {
+        TbBusiness business = businessService.selectTbBusinessById(Long.valueOf(id));
+        if (business != null) {
 //            tbClue.setStatus("3");
 //            tbClueService.updateTbClue(tbClue);
         }
-        System.out.println("-------------warn----"+business);
+        System.out.println("-------------warn----" + business);
     }
 }

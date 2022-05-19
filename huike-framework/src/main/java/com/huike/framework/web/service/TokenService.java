@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -22,8 +23,6 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 /**
  * token验证处理
- *
- * 
  */
 @Component
 public class TokenService {
@@ -70,10 +69,8 @@ public class TokenService {
     /**
      * 设置用户身份信息
      */
-    public void setLoginUser(LoginUser loginUser)
-    {
-        if (StringUtils.isNotNull(loginUser) && StringUtils.isNotEmpty(loginUser.getToken()))
-        {
+    public void setLoginUser(LoginUser loginUser) {
+        if (StringUtils.isNotNull(loginUser) && StringUtils.isNotEmpty(loginUser.getToken())) {
             refreshToken(loginUser);
         }
     }
@@ -81,10 +78,8 @@ public class TokenService {
     /**
      * 删除用户身份信息
      */
-    public void delLoginUser(String token)
-    {
-        if (StringUtils.isNotEmpty(token))
-        {
+    public void delLoginUser(String token) {
+        if (StringUtils.isNotEmpty(token)) {
             String userKey = getTokenKey(token);
             redisCache.deleteObject(userKey);
         }
@@ -105,9 +100,9 @@ public class TokenService {
         Map<String, Object> claims = new HashMap<>();
         claims.put(Constants.LOGIN_USER_KEY, token);
         //存放非敏感信息
-        claims.put("username",loginUser.getUsername());
-        claims.put("nickName",loginUser.getUser().getNickName());
-        claims.put("createTime",loginUser.getUser().getCreateTime());
+        claims.put("username", loginUser.getUsername());
+        claims.put("nickName", loginUser.getUser().getNickName());
+        claims.put("createTime", loginUser.getUser().getCreateTime());
         return createToken(claims);
     }
 
@@ -117,12 +112,10 @@ public class TokenService {
      * @param loginUser
      * @return 令牌
      */
-    public void verifyToken(LoginUser loginUser)
-    {
+    public void verifyToken(LoginUser loginUser) {
         long expireTime = loginUser.getExpireTime();
         long currentTime = System.currentTimeMillis();
-        if (expireTime - currentTime <= MILLIS_MINUTE_TEN)
-        {
+        if (expireTime - currentTime <= MILLIS_MINUTE_TEN) {
             refreshToken(loginUser);
         }
     }
@@ -132,8 +125,7 @@ public class TokenService {
      *
      * @param loginUser 登录信息
      */
-    public void refreshToken(LoginUser loginUser)
-    {
+    public void refreshToken(LoginUser loginUser) {
         loginUser.setLoginTime(System.currentTimeMillis());
         loginUser.setExpireTime(loginUser.getLoginTime() + expireTime * MILLIS_MINUTE);
         // 根据uuid将loginUser缓存
@@ -146,8 +138,7 @@ public class TokenService {
      *
      * @param loginUser 登录信息
      */
-    public void setUserAgent(LoginUser loginUser)
-    {
+    public void setUserAgent(LoginUser loginUser) {
         UserAgent userAgent = UserAgent.parseUserAgentString(ServletUtils.getRequest().getHeader("User-Agent"));
         String ip = IpUtils.getIpAddr(ServletUtils.getRequest());
         loginUser.setIpaddr(ip);
@@ -162,8 +153,7 @@ public class TokenService {
      * @param claims 数据声明
      * @return 令牌
      */
-    private String createToken(Map<String, Object> claims)
-    {
+    private String createToken(Map<String, Object> claims) {
         String token = Jwts.builder()
                 .setClaims(claims)
                 .signWith(SignatureAlgorithm.HS512, secret).compact();
@@ -176,8 +166,7 @@ public class TokenService {
      * @param token 令牌
      * @return 数据声明
      */
-    private Claims parseToken(String token)
-    {
+    private Claims parseToken(String token) {
         return Jwts.parser()
                 .setSigningKey(secret)
                 .parseClaimsJws(token)
@@ -190,8 +179,7 @@ public class TokenService {
      * @param token 令牌
      * @return 用户名
      */
-    public String getUsernameFromToken(String token)
-    {
+    public String getUsernameFromToken(String token) {
         Claims claims = parseToken(token);
         return claims.getSubject();
     }
@@ -202,18 +190,15 @@ public class TokenService {
      * @param request
      * @return token
      */
-    private String getToken(HttpServletRequest request)
-    {
+    private String getToken(HttpServletRequest request) {
         String token = request.getHeader(header);
-        if (StringUtils.isNotEmpty(token) && token.startsWith(Constants.TOKEN_PREFIX))
-        {
+        if (StringUtils.isNotEmpty(token) && token.startsWith(Constants.TOKEN_PREFIX)) {
             token = token.replace(Constants.TOKEN_PREFIX, "");
         }
         return token;
     }
 
-    private String getTokenKey(String uuid)
-    {
+    private String getTokenKey(String uuid) {
         return Constants.LOGIN_TOKEN_KEY + uuid;
     }
 }

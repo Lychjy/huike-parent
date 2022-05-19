@@ -15,9 +15,8 @@ public class ActivityTask {
     ITbActivityService tbActivityService;
 
     //活动结束任务调用
-    public void finish(String id)
-    {
-        TbActivity tbActivity= tbActivityService.selectTbActivityById(Long.parseLong(id));
+    public void finish(String id) {
+        TbActivity tbActivity = tbActivityService.selectTbActivityById(Long.parseLong(id));
         tbActivity.setStatus("4");
         tbActivityService.updateTbActivity(tbActivity);
     }

@@ -20,13 +20,14 @@ public class IndexController {
 
     /**
      * 首页--基础数据统计
+     *
      * @param beginCreateTime
      * @param endCreateTime
      * @return
      */
     @GetMapping("/getBaseInfo")
     public AjaxResult getBaseInfo(@RequestParam("beginCreateTime") String beginCreateTime,
-                                  @RequestParam("endCreateTime") String endCreateTime){
-        return AjaxResult.success(reportService.getBaseInfo(beginCreateTime,endCreateTime));
+                                  @RequestParam("endCreateTime") String endCreateTime) {
+        return AjaxResult.success(reportService.getBaseInfo(beginCreateTime, endCreateTime));
     }
 }

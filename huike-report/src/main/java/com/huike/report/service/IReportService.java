@@ -14,7 +14,8 @@ import com.huike.contract.domain.TbContract;
 public interface IReportService {
 
     /**
-     *新增客户统计
+     * 新增客户统计
+     *
      * @param beginCreateTime
      * @param endCreateTime
      * @return
@@ -24,13 +25,15 @@ public interface IReportService {
 
     /**
      * 客户统计报表
+     *
      * @param tbContract
      * @return
      */
-    public  List<TbContract> contractReportList(TbContract tbContract);
+    public List<TbContract> contractReportList(TbContract tbContract);
 
     /**
      * 销售统计
+     *
      * @param beginCreateTime
      * @param endCreateTime
      * @return
@@ -38,9 +41,9 @@ public interface IReportService {
     public LineChartVO salesStatistics(String beginCreateTime, String endCreateTime);
 
 
-
     /**
      * 销售统计部门报表
+     *
      * @param beginCreateTime
      * @param endCreateTime
      * @return
@@ -49,13 +52,16 @@ public interface IReportService {
 
     /**
      * 销售统计渠道报表
+     *
      * @param beginCreateTime
      * @param endCreateTime
      * @return
      */
     public List<Map<String, Object>> channelStatisticsList(String beginCreateTime, String endCreateTime);
+
     /**
      * 销售统计归属人报表
+     *
      * @param beginCreateTime
      * @param endCreateTime
      * @return
@@ -63,9 +69,9 @@ public interface IReportService {
     public List<Map<String, Object>> ownerShipStatisticsList(String beginCreateTime, String endCreateTime);
 
 
-
     /**
      * 渠道统计
+     *
      * @param beginCreateTime
      * @param endCreateTime
      * @return
@@ -75,6 +81,7 @@ public interface IReportService {
 
     /**
      * 活动统计
+     *
      * @param beginCreateTime
      * @param endCreateTime
      * @return
@@ -82,11 +89,11 @@ public interface IReportService {
     public List<Map<String, Object>> activityStatistics(String beginCreateTime, String endCreateTime);
 
 
-
     public List<TbClue> cluesStatisticsList(TbClue clue);
 
     /**
      * 活动渠道统计
+     *
      * @param activity
      * @return
      */
@@ -96,11 +103,12 @@ public interface IReportService {
     public IndexVo getIndex(IndexStatisticsVo request);
 
 
-    public List<Map<String,Object>> salesStatisticsForIndex(IndexStatisticsVo request);
+    public List<Map<String, Object>> salesStatisticsForIndex(IndexStatisticsVo request);
 
 
     /**
      * 首页基本数据展示
+     *
      * @param beginCreateTime
      * @param endCreateTime
      * @return

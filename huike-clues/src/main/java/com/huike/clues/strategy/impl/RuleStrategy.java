@@ -67,7 +67,9 @@ public class RuleStrategy implements Rule {
         zhangsan1 = userMapper.selectUserByName("zhangsan1");
     }
 
-    /**=========================利用空间换时间将部分的数据提前存放到内存中================================**/
+    /**
+     * =========================利用空间换时间将部分的数据提前存放到内存中================================
+     **/
     @Override
     public Boolean loadRule(TbClue clue) {
         //TODO 完成基于规则分配线索部分的代码

@@ -20,6 +20,7 @@ import java.util.List;
 
 /**
  * 线索跟进记录Controller
+ *
  * @date 2021-04-22
  */
 @RestController
@@ -31,8 +32,8 @@ public class TbClueTrackRecordController extends BaseController {
      */
     @PreAuthorize("@ss.hasPermi('clues:record:list')")
     @GetMapping("/list")
-    public TableDataInfo list(@RequestParam("clueId")Long clueId) {
-       return null;
+    public TableDataInfo list(@RequestParam("clueId") Long clueId) {
+        return null;
     }
 
 

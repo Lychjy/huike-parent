@@ -24,7 +24,7 @@ import com.huike.common.enums.BusinessType;
 
 /**
  * 活动管理Controller
- * 
+ *
  * @author wgl
  * @date 2021-04-01
  */
@@ -40,24 +40,23 @@ public class TbActivityController extends BaseController {
      */
     @PreAuthorize("@ss.hasPermi('clues:activity:list')")
     @GetMapping("/list")
-    public TableDataInfo list(TbActivity tbActivity)
-    {
+    public TableDataInfo list(TbActivity tbActivity) {
         startPage();
         List<TbActivity> list = tbActivityService.selectTbActivityList(tbActivity);
-        Map<String,Object> countParms=tbActivityService.getCountByStatus();
-        return getDataTable(list,countParms);
+        Map<String, Object> countParms = tbActivityService.getCountByStatus();
+        return getDataTable(list, countParms);
     }
 
 
     /**
      * 获取渠道下活动
+     *
      * @param channel
      * @return
      */
     @GetMapping("/listselect/{channel}")
-    public AjaxResult list(@PathVariable("channel")  String channel)
-    {
-        TbActivity tbActivity =new TbActivity();
+    public AjaxResult list(@PathVariable("channel") String channel) {
+        TbActivity tbActivity = new TbActivity();
         tbActivity.setChannel(channel);
         tbActivity.setStatus("2");
         return AjaxResult.success(tbActivityService.selectTbActivityList(tbActivity));
@@ -68,8 +67,7 @@ public class TbActivityController extends BaseController {
      */
     @PreAuthorize("@ss.hasPermi('clues:activity:query')")
     @GetMapping(value = "/{id}")
-    public AjaxResult getInfo(@PathVariable("id") Long id)
-    {
+    public AjaxResult getInfo(@PathVariable("id") Long id) {
         return AjaxResult.success(tbActivityService.selectTbActivityById(id));
     }
 
@@ -79,8 +77,7 @@ public class TbActivityController extends BaseController {
     @PreAuthorize("@ss.hasPermi('clues:activity:add')")
     @Log(title = "活动管理", businessType = BusinessType.INSERT)
     @PostMapping
-    public AjaxResult add(@RequestBody TbActivity tbActivity)
-    {
+    public AjaxResult add(@RequestBody TbActivity tbActivity) {
         return toAjax(tbActivityService.insertTbActivity(tbActivity));
     }
 
@@ -91,8 +88,7 @@ public class TbActivityController extends BaseController {
     @PreAuthorize("@ss.hasPermi('clues:activity:edit')")
     @Log(title = "活动管理", businessType = BusinessType.UPDATE)
     @PutMapping
-    public AjaxResult edit(@RequestBody TbActivity tbActivity)
-    {
+    public AjaxResult edit(@RequestBody TbActivity tbActivity) {
         return toAjax(tbActivityService.updateTbActivity(tbActivity));
     }
 
@@ -101,9 +97,8 @@ public class TbActivityController extends BaseController {
      */
     @PreAuthorize("@ss.hasPermi('clues:activity:remove')")
     @Log(title = "活动管理", businessType = BusinessType.DELETE)
-	@DeleteMapping("/{ids}")
-    public AjaxResult remove(@PathVariable Long[] ids)
-    {
+    @DeleteMapping("/{ids}")
+    public AjaxResult remove(@PathVariable Long[] ids) {
         return toAjax(tbActivityService.deleteTbActivityByIds(ids));
     }
 }

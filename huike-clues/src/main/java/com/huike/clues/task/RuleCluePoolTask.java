@@ -20,24 +20,23 @@ public class RuleCluePoolTask {
 
 
     //线程池回收回调
-    public void recovery(String id)
-    {
-        TbClue tbClue= tbClueService.selectTbClueById(Long.valueOf(id));
-        if(tbClue!=null){
-           tbClueService.updateStatus(tbClue.getId(), TbClue.StatusType.RECOVERY.getValue());
+    public void recovery(String id) {
+        TbClue tbClue = tbClueService.selectTbClueById(Long.valueOf(id));
+        if (tbClue != null) {
+            tbClueService.updateStatus(tbClue.getId(), TbClue.StatusType.RECOVERY.getValue());
         }
-        System.out.println("-------------recovery"+tbClue );
+        System.out.println("-------------recovery" + tbClue);
     }
 
 
     //线索池告警回调
-    public void warn(String id){
-        TbClue tbClue= tbClueService.selectTbClueById(Long.valueOf(id));
-        if(tbClue!=null){
+    public void warn(String id) {
+        TbClue tbClue = tbClueService.selectTbClueById(Long.valueOf(id));
+        if (tbClue != null) {
 //            tbClue.setStatus("3");
 //            tbClueService.updateTbClue(tbClue);
         }
-        System.out.println("-------------warn"+tbClue);
+        System.out.println("-------------warn" + tbClue);
     }
 
 }

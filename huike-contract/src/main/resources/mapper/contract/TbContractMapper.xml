@@ -5,41 +5,60 @@
 <mapper namespace="com.huike.contract.mapper.TbContractMapper">
 
     <resultMap type="TbContract" id="TbContractResult">
-        <result property="id"    column="id"    />
-        <result property="contractNo"    column="contract_no"    />
-        <result property="phone"    column="phone"    />
-        <result property="name"    column="name"    />
-        <result property="subject"    column="subject"    />
-        <result property="channel"    column="channel"    />
-        <result property="courseId"    column="course_id"    />
-        <result property="activityId"    column="activity_id"    />
-        <result property="status"    column="status"    />
-        <result property="createBy"    column="create_by"    />
-        <result property="deptId"    column="dept_id"    />
-        <result property="createTime"    column="create_time"    />
-        <result property="order"    column="contract_order"    />
-        <result property="fileName"    column="file_name"    />
-        <result property="discountType"    column="discount_type"    />
-        <result property="coursePrice"    column="course_price"    />
-        <result property="businessId"    column="business_id"    />
+        <result property="id" column="id"/>
+        <result property="contractNo" column="contract_no"/>
+        <result property="phone" column="phone"/>
+        <result property="name" column="name"/>
+        <result property="subject" column="subject"/>
+        <result property="channel" column="channel"/>
+        <result property="courseId" column="course_id"/>
+        <result property="activityId" column="activity_id"/>
+        <result property="status" column="status"/>
+        <result property="createBy" column="create_by"/>
+        <result property="deptId" column="dept_id"/>
+        <result property="createTime" column="create_time"/>
+        <result property="order" column="contract_order"/>
+        <result property="fileName" column="file_name"/>
+        <result property="discountType" column="discount_type"/>
+        <result property="coursePrice" column="course_price"/>
+        <result property="businessId" column="business_id"/>
     </resultMap>
 
     <sql id="selectTbContractVo">
-        select id, contract_no, phone, name, subject, channel, course_id, activity_id, status, create_by, dept_id,create_time, contract_order, file_name, discount_type, course_price,business_id,dept_id from tb_contract
+        select id,
+               contract_no,
+               phone,
+               name,
+               subject,
+               channel,
+               course_id,
+               activity_id,
+               status,
+               create_by,
+               dept_id,
+               create_time,
+               contract_order,
+               file_name,
+               discount_type,
+               course_price,
+               business_id,
+               dept_id
+        from tb_contract
     </sql>
 
     <select id="selectTbContractList" parameterType="TbContract" resultMap="TbContractResult">
         <include refid="selectTbContractVo"/>
         <where>
-            <if test="contractNo != null  and contractNo != ''"> and contract_no like concat('%', #{contractNo}, '%')</if>
+            <if test="contractNo != null  and contractNo != ''">and contract_no like concat('%', #{contractNo}, '%')
+            </if>
             <if test="channel != null and channel != ''">channel = #{channel}</if>
-            <if test="phone != null  and phone != ''"> and phone = #{phone}</if>
-            <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
-            <if test="subject != null and subject != ''"> and subject = #{subject}</if>
-            <if test="courseId != null and courseId != ''"> and course_id = #{courseId}</if>
-            <if test="activityId != null and activityId != ''"> and activity_id = #{activityId}</if>
-            <if test="deptId != null and deptId != ''"> and dept_id = #{deptId}</if>
-            <if test="createBy != null and createBy != ''"> and create_by = #{createBy}</if>
+            <if test="phone != null  and phone != ''">and phone = #{phone}</if>
+            <if test="name != null  and name != ''">and name like concat('%', #{name}, '%')</if>
+            <if test="subject != null and subject != ''">and subject = #{subject}</if>
+            <if test="courseId != null and courseId != ''">and course_id = #{courseId}</if>
+            <if test="activityId != null and activityId != ''">and activity_id = #{activityId}</if>
+            <if test="deptId != null and deptId != ''">and dept_id = #{deptId}</if>
+            <if test="createBy != null and createBy != ''">and create_by = #{createBy}</if>
             <if test="params.beginCreateTime != null and params.beginCreateTime != ''"><!-- 开始创建时间 -->
                 and date_format(create_time,'%y%m%d') &gt;= date_format(#{params.beginCreateTime},'%y%m%d')
             </if>
@@ -49,8 +68,6 @@
         </where>
         ORDER BY `create_time` DESC
     </select>
-
-
 
 
     <select id="selectTbContractById" parameterType="Long" resultMap="TbContractResult">
@@ -122,7 +139,9 @@
     </update>
 
     <delete id="deleteTbContractById" parameterType="Long">
-        delete from tb_contract where id = #{id}
+        delete
+        from tb_contract
+        where id = #{id}
     </delete>
 
     <delete id="deleteTbContractByIds" parameterType="String">
@@ -148,7 +167,7 @@
         GROUP BY dd;
     </select>
 
-    <select id="contractStatisticsByUser"  parameterType="com.huike.clues.domain.vo.IndexStatisticsVo"
+    <select id="contractStatisticsByUser" parameterType="com.huike.clues.domain.vo.IndexStatisticsVo"
             resultType="java.util.Map">
         select c.create_by, c.dept_id, count(c.id) as num,ROUND(sum(c.contract_order),2) as amount from tb_contract c
         <where>
@@ -181,7 +200,6 @@
     </select>
 
 
-
     <select id="chanelStatistics"
             resultType="java.util.Map">
         SELECT count(1) as num, channel from tb_contract
@@ -209,7 +227,6 @@
         </where>
         GROUP BY activity_id;
     </select>
-
 
 
     <select id="deptStatistics"
@@ -258,8 +275,9 @@
     </select>
 
 
-    <select id="countByActivity"  parameterType="TbContract"  resultType="java.util.Map">
-        select count(1) as customersNum, sum(contract_order) as amount, sum(course_price-contract_order) as cost from tb_contract
+    <select id="countByActivity" parameterType="TbContract" resultType="java.util.Map">
+        select count(1) as customersNum, sum(contract_order) as amount, sum(course_price-contract_order) as cost from
+        tb_contract
         where channel=#{channel} and activity_id=#{activityId}
         <if test="params.beginCreateTime != null and params.beginCreateTime != ''"><!-- 开始创建时间 -->
             and date_format(create_time,'%y-%m-%d') &gt;= date_format(#{params.beginCreateTime},'%y-%m-%d')

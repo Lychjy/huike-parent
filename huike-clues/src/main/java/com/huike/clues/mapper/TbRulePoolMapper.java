@@ -1,19 +1,19 @@
 package com.huike.clues.mapper;
 
 import java.util.List;
+
 import com.huike.clues.domain.TbRulePool;
 
 /**
  * 线索池规则Mapper接口
- * 
+ *
  * @author wgl
  * @date 2021-04-16
  */
-public interface TbRulePoolMapper 
-{
+public interface TbRulePoolMapper {
     /**
      * 查询线索池规则
-     * 
+     *
      * @param id 线索池规则ID
      * @return 线索池规则
      */
@@ -24,7 +24,7 @@ public interface TbRulePoolMapper
 
     /**
      * 查询线索池规则列表
-     * 
+     *
      * @param tbRulePool 线索池规则
      * @return 线索池规则集合
      */
@@ -32,7 +32,7 @@ public interface TbRulePoolMapper
 
     /**
      * 新增线索池规则
-     * 
+     *
      * @param tbRulePool 线索池规则
      * @return 结果
      */
@@ -40,7 +40,7 @@ public interface TbRulePoolMapper
 
     /**
      * 修改线索池规则
-     * 
+     *
      * @param tbRulePool 线索池规则
      * @return 结果
      */
@@ -48,7 +48,7 @@ public interface TbRulePoolMapper
 
     /**
      * 删除线索池规则
-     * 
+     *
      * @param id 线索池规则ID
      * @return 结果
      */
@@ -56,7 +56,7 @@ public interface TbRulePoolMapper
 
     /**
      * 批量删除线索池规则
-     * 
+     *
      * @param ids 需要删除的数据ID
      * @return 结果
      */

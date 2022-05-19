@@ -9,7 +9,7 @@ public class ActivityInstanceVo {
     private String userName;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
-    private String status ="2";
+    private String status = "2";
 
 
     private String rejectionReasons;
@@ -60,24 +60,21 @@ public class ActivityInstanceVo {
         this.rejectionTime = rejectionTime;
     }
 
-    public enum ActivityType
-    {
+    public enum ActivityType {
 
-        STEP1("销售专员添加合同","1"),
+        STEP1("销售专员添加合同", "1"),
 
-        STEP2("销售主管审核","2"),
+        STEP2("销售主管审核", "2"),
 
-        STEP3("总经理审批","3"),
+        STEP3("总经理审批", "3"),
 
-        STEP4("财务审批","4");
-
+        STEP4("财务审批", "4");
 
 
         private String name;
         private String dictType;
 
-        private ActivityType(String name, String dictType)
-        {
+        private ActivityType(String name, String dictType) {
             this.name = name;
             this.dictType = dictType;
         }

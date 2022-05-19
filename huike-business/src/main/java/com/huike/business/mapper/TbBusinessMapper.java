@@ -10,6 +10,7 @@ import org.apache.ibatis.annotations.Param;
 
 /**
  * 商机Mapper接口
+ *
  * @date 2021-04-25
  */
 public interface TbBusinessMapper {
@@ -68,6 +69,7 @@ public interface TbBusinessMapper {
 
     /**
      * 重新分配商机的状态
+     *
      * @param id
      * @param status
      * @return
@@ -77,6 +79,6 @@ public interface TbBusinessMapper {
 
     public int setTransfer(@Param("id") Long id, @Param("status") String status);
 
-    public void updateBusinessEndTimeById(@Param("id")Long id, @Param("endTime")Date endTime);
+    public void updateBusinessEndTimeById(@Param("id") Long id, @Param("endTime") Date endTime);
 
 }

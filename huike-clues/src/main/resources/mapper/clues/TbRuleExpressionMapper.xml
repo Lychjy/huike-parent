@@ -5,34 +5,35 @@
 <mapper namespace="com.huike.clues.mapper.TbRuleExpressionMapper">
 
     <resultMap type="TbRuleExpression" id="TbRuleExpressionResult">
-        <result property="id"    column="id"    />
-        <result property="ruleKey"    column="rule_key"    />
-        <result property="expression"    column="expression"    />
-        <result property="ruleValue"    column="rule_value"    />
-        <result property="number"    column="number"    />
-        <result property="ruleId"    column="rule_id"    />
+        <result property="id" column="id"/>
+        <result property="ruleKey" column="rule_key"/>
+        <result property="expression" column="expression"/>
+        <result property="ruleValue" column="rule_value"/>
+        <result property="number" column="number"/>
+        <result property="ruleId" column="rule_id"/>
     </resultMap>
 
     <sql id="selectTbRuleExpressionVo">
-        select id, rule_key, expression, rule_value, number, rule_id from tb_rule_expression
+        select id, rule_key, expression, rule_value, number, rule_id
+        from tb_rule_expression
     </sql>
 
     <select id="selectTbRuleExpressionList" parameterType="TbRuleExpression" resultMap="TbRuleExpressionResult">
         <include refid="selectTbRuleExpressionVo"/>
         <where>
-            <if test="ruleKey != null  and ruleKey != ''"> and rule_key = #{ruleKey}</if>
-            <if test="expression != null  and expression != ''"> and expression = #{expression}</if>
-            <if test="ruleValue != null  and ruleValue != ''"> and rule_value = #{ruleValue}</if>
-            <if test="number != null "> and number = #{number}</if>
-            <if test="ruleId != null "> and rule_id = #{ruleId}</if>
+            <if test="ruleKey != null  and ruleKey != ''">and rule_key = #{ruleKey}</if>
+            <if test="expression != null  and expression != ''">and expression = #{expression}</if>
+            <if test="ruleValue != null  and ruleValue != ''">and rule_value = #{ruleValue}</if>
+            <if test="number != null ">and number = #{number}</if>
+            <if test="ruleId != null ">and rule_id = #{ruleId}</if>
         </where>
     </select>
 
     <insert id="insertBatch">
         INSERT INTO tb_rule_expression(rule_key,expression,rule_value,rule_id,number) values
-        <foreach collection ="list" item="rule" separator =",">
+        <foreach collection="list" item="rule" separator=",">
             (#{rule.ruleKey}, #{rule.expression}, #{rule.ruleValue}, #{rule.ruleId}, #{rule.number})
-        </foreach >
+        </foreach>
     </insert>
 
     <select id="selectTbRuleExpressionById" parameterType="Long" resultMap="TbRuleExpressionResult">
@@ -77,7 +78,9 @@
     </update>
 
     <delete id="deleteTbRuleExpressionById" parameterType="Long">
-        delete from tb_rule_expression where id = #{id}
+        delete
+        from tb_rule_expression
+        where id = #{id}
     </delete>
 
     <delete id="deleteTbRuleExpressionByIds" parameterType="String">

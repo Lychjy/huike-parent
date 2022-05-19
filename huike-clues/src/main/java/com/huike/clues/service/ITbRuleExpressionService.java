@@ -1,19 +1,19 @@
 package com.huike.clues.service;
 
 import java.util.List;
+
 import com.huike.clues.domain.TbRuleExpression;
 
 /**
  * 规则达式Service接口
- * 
+ *
  * @author wgl
  * @date 2021-04-08
  */
-public interface ITbRuleExpressionService 
-{
+public interface ITbRuleExpressionService {
     /**
      * 查询规则达式
-     * 
+     *
      * @param id 规则达式ID
      * @return 规则达式
      */
@@ -21,7 +21,7 @@ public interface ITbRuleExpressionService
 
     /**
      * 查询规则达式列表
-     * 
+     *
      * @param tbRuleExpression 规则达式
      * @return 规则达式集合
      */
@@ -29,7 +29,7 @@ public interface ITbRuleExpressionService
 
     /**
      * 新增规则达式
-     * 
+     *
      * @param tbRuleExpression 规则达式
      * @return 结果
      */
@@ -37,7 +37,7 @@ public interface ITbRuleExpressionService
 
     /**
      * 修改规则达式
-     * 
+     *
      * @param tbRuleExpression 规则达式
      * @return 结果
      */
@@ -45,7 +45,7 @@ public interface ITbRuleExpressionService
 
     /**
      * 批量删除规则达式
-     * 
+     *
      * @param ids 需要删除的规则达式ID
      * @return 结果
      */
@@ -53,7 +53,7 @@ public interface ITbRuleExpressionService
 
     /**
      * 删除规则达式信息
-     * 
+     *
      * @param id 规则达式ID
      * @return 结果
      */

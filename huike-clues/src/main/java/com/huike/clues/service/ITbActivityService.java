@@ -7,25 +7,24 @@ import com.huike.clues.domain.TbActivity;
 
 /**
  * 活动管理Service接口
+ *
  * @date 2021-04-01
  */
-public interface ITbActivityService 
-{
+public interface ITbActivityService {
     /**
      * 查询活动管理
-     * 
+     *
      * @param id 活动管理ID
      * @return 活动管理
      */
     public TbActivity selectTbActivityById(Long id);
 
 
-
     public TbActivity selectTbActivityByCode(String code);
 
     /**
      * 查询活动管理列表
-     * 
+     *
      * @param tbActivity 活动管理
      * @return 活动管理集合
      */
@@ -33,7 +32,7 @@ public interface ITbActivityService
 
     /**
      * 新增活动管理
-     * 
+     *
      * @param tbActivity 活动管理
      * @return 结果
      */
@@ -41,7 +40,7 @@ public interface ITbActivityService
 
     /**
      * 修改活动管理
-     * 
+     *
      * @param tbActivity 活动管理
      * @return 结果
      */
@@ -49,7 +48,7 @@ public interface ITbActivityService
 
     /**
      * 批量删除活动管理
-     * 
+     *
      * @param ids 需要删除的活动管理ID
      * @return 结果
      */
@@ -57,7 +56,7 @@ public interface ITbActivityService
 
     /**
      * 删除活动管理信息
-     * 
+     *
      * @param id 活动管理ID
      * @return 结果
      */

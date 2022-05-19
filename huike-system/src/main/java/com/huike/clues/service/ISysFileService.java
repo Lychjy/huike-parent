@@ -8,11 +8,12 @@ import com.huike.common.core.domain.AjaxResult;
 
 public interface ISysFileService {
 
-	/**
-	 * 文件上传
-	 * @param file
-	 * @return
-	 */
-	AjaxResult upload(MultipartFile file);
+    /**
+     * 文件上传
+     *
+     * @param file
+     * @return
+     */
+    AjaxResult upload(MultipartFile file);
 
 }
