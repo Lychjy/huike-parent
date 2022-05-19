@@ -6,8 +6,6 @@ import com.huike.clues.domain.TbRuleExpression;
 
 /**
  * 规则达式Mapper接口
- *
- * @date 2021-04-08
  */
 public interface TbRuleExpressionMapper {
     /**

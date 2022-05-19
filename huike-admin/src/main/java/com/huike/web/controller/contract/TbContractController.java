@@ -28,19 +28,15 @@ import com.huike.contract.service.ITbContractService;
 @RestController
 @RequestMapping("/contract")
 public class TbContractController extends BaseController {
+
     @Autowired
     private ITbContractService tbContractService;
-
     @Autowired
     private ITbClueService tbClueService;
 
 
     /**
      * 商机转合同
-     *
-     * @param id
-     * @param tbContract
-     * @return
      */
     @PreAuthorize("@ss.hasPermi('contract:contract:change')")
     @Log(title = "商机转合同", businessType = BusinessType.UPDATE)

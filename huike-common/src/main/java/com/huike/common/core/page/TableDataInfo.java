@@ -1,5 +1,8 @@
 package com.huike.common.core.page;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
@@ -7,6 +10,8 @@ import java.util.Map;
 /**
  * 表格分页数据对象
  */
+@Data
+@NoArgsConstructor
 public class TableDataInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -34,12 +39,6 @@ public class TableDataInfo implements Serializable {
     private Map<String, Object> params;
 
     /**
-     * 表格数据对象
-     */
-    public TableDataInfo() {
-    }
-
-    /**
      * 分页
      *
      * @param list  列表数据
@@ -50,43 +49,4 @@ public class TableDataInfo implements Serializable {
         this.total = total;
     }
 
-    public Map<String, Object> getParams() {
-        return params;
-    }
-
-    public void setParams(Map<String, Object> params) {
-        this.params = params;
-    }
-
-    public long getTotal() {
-        return total;
-    }
-
-    public void setTotal(long total) {
-        this.total = total;
-    }
-
-    public List<?> getRows() {
-        return rows;
-    }
-
-    public void setRows(List<?> rows) {
-        this.rows = rows;
-    }
-
-    public int getCode() {
-        return code;
-    }
-
-    public void setCode(int code) {
-        this.code = code;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
 }

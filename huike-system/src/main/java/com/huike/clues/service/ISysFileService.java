@@ -1,10 +1,7 @@
 package com.huike.clues.service;
 
-import javax.servlet.http.HttpServletResponse;
-
-import org.springframework.web.multipart.MultipartFile;
-
 import com.huike.common.core.domain.AjaxResult;
+import org.springframework.web.multipart.MultipartFile;
 
 public interface ISysFileService {
 

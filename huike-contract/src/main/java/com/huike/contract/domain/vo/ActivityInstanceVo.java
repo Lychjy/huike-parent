@@ -10,8 +10,6 @@ public class ActivityInstanceVo {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
     private String status = "2";
-
-
     private String rejectionReasons;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
@@ -32,7 +30,6 @@ public class ActivityInstanceVo {
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
 
     public Date getCreateTime() {
         return createTime;

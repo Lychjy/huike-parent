@@ -1,6 +1,9 @@
 package com.huike.clues.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import com.huike.common.annotation.Excel;
@@ -12,6 +15,9 @@ import java.util.List;
 /**
  * 规则分配对象 tb_rule_assign
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class TbRuleAssign extends BaseEntity {
     private static final long serialVersionUID = 1L;
 
@@ -55,80 +61,6 @@ public class TbRuleAssign extends BaseEntity {
 
     private String type;
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public List<String> getAssignObjectNames() {
-        return assignObjectNames;
-    }
-
-    public void setAssignObjectNames(List<String> assignObjectNames) {
-        this.assignObjectNames = assignObjectNames;
-    }
-
-    private List<TbRuleExpression> rulesList;
-
-    public List<TbRuleExpression> getRulesList() {
-        return rulesList;
-    }
-
-    public void setRulesList(List<TbRuleExpression> rulesList) {
-        this.rulesList = rulesList;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setRuleCondition(String ruleCondition) {
-        this.ruleCondition = ruleCondition;
-    }
-
-    public String getRuleCondition() {
-        return ruleCondition;
-    }
-
-    public void setRuleExpression(String ruleExpression) {
-        this.ruleExpression = ruleExpression;
-    }
-
-    public String getRuleExpression() {
-        return ruleExpression;
-    }
-
-    public void setAssignObject(String assignObject) {
-        this.assignObject = assignObject;
-    }
-
-    public String getAssignObject() {
-        return assignObject;
-    }
-
-    public String getAssignType() {
-        return assignType;
-    }
-
-    public void setAssignType(String assignType) {
-        this.assignType = assignType;
-    }
-
-    public void setRuleOrder(Long ruleOrder) {
-        this.ruleOrder = ruleOrder;
-    }
-
-    public Long getRuleOrder() {
-        return ruleOrder;
-    }
-
     @Override
     public String toString() {
         return new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE)
@@ -144,26 +76,14 @@ public class TbRuleAssign extends BaseEntity {
     }
 
     public enum AssignType {
-        /**
-         * 小时
-         */
+        /*小时*/
         USER("0"),
-
-        /**
-         * 天
-         */
+        /*天/
         POST("1"),
-
-        /**
-         * 部门
-         */
+        /*部门*/
         DEPARTMENT("2"),
-
-        /**
-         * 角色
-         */
+        /*角色*/
         ROLE("3");
-
 
         private String value;
 

@@ -17,25 +17,18 @@
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>com.huike</groupId>
             <artifactId>huike-system</artifactId>
         </dependency>
-
         <!-- 通用工具-->
         <dependency>
             <groupId>com.huike</groupId>
             <artifactId>huike-common</artifactId>
         </dependency>
-
-
         <dependency>
             <groupId>com.huike</groupId>
             <artifactId>huike-clues</artifactId>
         </dependency>
-
-
     </dependencies>
-
 </project>

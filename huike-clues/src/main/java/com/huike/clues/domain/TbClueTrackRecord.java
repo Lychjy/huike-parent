@@ -1,6 +1,9 @@
 package com.huike.clues.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import com.huike.common.annotation.Excel;
@@ -10,10 +13,12 @@ import java.util.Date;
 
 /**
  * 线索跟进记录对象 tb_clue_track_record
- *
- * @date 2021-04-19
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class TbClueTrackRecord extends BaseEntity {
+
     private static final long serialVersionUID = 1L;
 
     /**
@@ -54,70 +59,6 @@ public class TbClueTrackRecord extends BaseEntity {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private Date nextTime;
 
-
-    public Date getNextTime() {
-        return nextTime;
-    }
-
-    public void setNextTime(Date nextTime) {
-        this.nextTime = nextTime;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public Long getClueId() {
-        return clueId;
-    }
-
-    public void setClueId(Long clueId) {
-        this.clueId = clueId;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-
-    public String getSubject() {
-        return subject;
-    }
-
-    public void setRecord(String record) {
-        this.record = record;
-    }
-
-    public String getRecord() {
-        return record;
-    }
-
-    public void setLevel(String level) {
-        this.level = level;
-    }
-
-    public String getLevel() {
-        return level;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setFalseReason(String falseReason) {
-        this.falseReason = falseReason;
-    }
-
-    public String getFalseReason() {
-        return falseReason;
-    }
 
     @Override
     public String toString() {

@@ -12,10 +12,7 @@ import com.huike.common.annotation.Excel;
 
 /**
  * 线索对象 tb_business
- *
- * @date 2021-04-28
  */
-
 public class TbBusiness extends TbClue {
 
     private static final long serialVersionUID = 1L;

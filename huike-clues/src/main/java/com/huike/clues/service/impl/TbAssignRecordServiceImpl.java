@@ -11,12 +11,10 @@ import com.huike.clues.service.ITbAssignRecordService;
 
 /**
  * 线索分配记录Service业务层处理
- *
- * @author wgl
- * @date 2021-04-19
  */
 @Service
 public class TbAssignRecordServiceImpl implements ITbAssignRecordService {
+
     @Autowired
     private TbAssignRecordMapper tbAssignRecordMapper;
 

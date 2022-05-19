@@ -11,30 +11,21 @@
 
     <artifactId>huike-clues</artifactId>
 
-    <description>
-        线索管理
-    </description>
+    <description>线索管理</description>
 
     <dependencies>
-
         <!-- 通用工具-->
         <dependency>
             <groupId>com.huike</groupId>
             <artifactId>huike-common</artifactId>
         </dependency>
-
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
-
-
         <dependency>
             <groupId>com.huike</groupId>
             <artifactId>huike-system</artifactId>
         </dependency>
-
-
     </dependencies>
 </project>

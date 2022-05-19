@@ -17,13 +17,8 @@ public class IndexController {
     @Autowired
     private IReportService reportService;
 
-
     /**
      * 首页--基础数据统计
-     *
-     * @param beginCreateTime
-     * @param endCreateTime
-     * @return
      */
     @GetMapping("/getBaseInfo")
     public AjaxResult getBaseInfo(@RequestParam("beginCreateTime") String beginCreateTime,

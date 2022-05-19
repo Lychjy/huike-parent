@@ -30,25 +30,19 @@ import com.huike.contract.service.ITbContractService;
  */
 @Service
 public class TbContractServiceImpl implements ITbContractService {
+
     @Autowired
     private TbContractMapper tbContractMapper;
-
-
     @Autowired
     private TbBusinessMapper tbBusinessMapper;
-
     @Autowired
     private SysUserMapper sysUserMapper;
-
     @Autowired
     private RedisCache redisCache;
-
     @Autowired
     private TbActivityMapper activityMapper;
-
     @Autowired
     private TbCourseMapper courseMapper;
-
 
     private ISysDictDataService sysDictDataService;
 
@@ -138,7 +132,7 @@ public class TbContractServiceImpl implements ITbContractService {
                 BigDecimal disCount = new BigDecimal(tbActivity.getDiscount());
                 BigDecimal order = price.multiply(disCount.divide(new BigDecimal(10), 2, BigDecimal.ROUND_CEILING));
                 tbContract.setOrder(order.floatValue());
-//                tbContract.setOrder(course.getPrice()*tbActivity.getDiscount());
+                // tbContract.setOrder(course.getPrice()*tbActivity.getDiscount());
             } else {
                 //当代金券大于等于合同50% 按照原价
                 if (tbActivity.getVouchers() >= course.getPrice() / 2) {

@@ -42,11 +42,8 @@ public class SysUserController extends BaseController {
 
     @Autowired
     private ISysUserService userService;
-
     @Autowired
     private ISysRoleService roleService;
-
-
     @Autowired
     private TokenService tokenService;
 
@@ -64,14 +61,12 @@ public class SysUserController extends BaseController {
 
     /**
      * 非权限下拉列表支持
-     *
-     * @param user
-     * @return
      */
     @GetMapping("/listselect")
     public AjaxResult listselect(SysUser user) {
         return AjaxResult.success(userService.selectUserList(user));
     }
+
 
     @Log(title = "用户管理", businessType = BusinessType.EXPORT)
     @PreAuthorize("@ss.hasPermi('system:user:export')")

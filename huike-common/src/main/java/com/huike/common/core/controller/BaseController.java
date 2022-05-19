@@ -24,6 +24,7 @@ import com.huike.common.utils.sql.SqlUtil;
  * web层通用数据处理
  */
 public class BaseController {
+
     protected final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     /**
@@ -69,9 +70,6 @@ public class BaseController {
 
     /**
      * 手工分页
-     *
-     * @param list
-     * @return
      */
     public TableDataInfo getDataTablePage(List<?> list) {
         PageDomain pageDomain = TableSupport.buildPageRequest();

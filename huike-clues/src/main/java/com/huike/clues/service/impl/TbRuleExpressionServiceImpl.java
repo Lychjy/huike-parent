@@ -10,12 +10,10 @@ import com.huike.clues.service.ITbRuleExpressionService;
 
 /**
  * 规则达式Service业务层处理
- *
- * @author wgl
- * @date 2021-04-08
  */
 @Service
 public class TbRuleExpressionServiceImpl implements ITbRuleExpressionService {
+
     @Autowired
     private TbRuleExpressionMapper tbRuleExpressionMapper;
 

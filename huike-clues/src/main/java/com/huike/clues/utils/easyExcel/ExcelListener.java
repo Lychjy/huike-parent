@@ -39,9 +39,6 @@ public class ExcelListener extends AnalysisEventListener<TbClueExcelVo> {
     /**
      * 每解析一行数据都要执行一次
      * 每条都执行一次插入操作
-     *
-     * @param data
-     * @param context
      */
     @Override
     public void invoke(TbClueExcelVo data, AnalysisContext context) {
@@ -51,8 +48,6 @@ public class ExcelListener extends AnalysisEventListener<TbClueExcelVo> {
 
     /**
      * 当所有数据都解析完成后会执行
-     *
-     * @param context
      */
     @Override
     public void doAfterAllAnalysed(AnalysisContext context) {
@@ -60,8 +55,6 @@ public class ExcelListener extends AnalysisEventListener<TbClueExcelVo> {
 
     /**
      * 返回结果集对象
-     *
-     * @return
      */
     public ImportResultDTO getResult() {
         return resultDTO;

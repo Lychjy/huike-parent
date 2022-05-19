@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * @author
+ * 活动任务
  */
 @Component("activityTask")
 public class ActivityTask {

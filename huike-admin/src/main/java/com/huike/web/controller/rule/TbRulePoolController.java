@@ -18,12 +18,11 @@ import com.huike.common.enums.BusinessType;
 
 /**
  * 线索池规则Controller
- *
- * @date 2021-04-16
  */
 @RestController
 @RequestMapping("/rule/pool")
 public class TbRulePoolController extends BaseController {
+
     @Autowired
     private ITbRulePoolService tbRulePoolService;
 
@@ -60,6 +59,5 @@ public class TbRulePoolController extends BaseController {
     public AjaxResult edit(@RequestBody TbRulePool tbRulePool) {
         return toAjax(tbRulePoolService.updateTbRulePool(tbRulePool));
     }
-
 
 }

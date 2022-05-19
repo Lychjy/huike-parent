@@ -12,6 +12,7 @@ import com.huike.common.core.domain.entity.SysUser;
  * 登录用户身份权限
  */
 public class LoginUser implements UserDetails {
+
     private static final long serialVersionUID = 1L;
 
     /**
@@ -119,8 +120,6 @@ public class LoginUser implements UserDetails {
 
     /**
      * 是否可用 ,禁用的用户不能身份验证
-     *
-     * @return
      */
     @JsonIgnore
     @Override

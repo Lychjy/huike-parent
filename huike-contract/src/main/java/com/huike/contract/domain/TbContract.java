@@ -10,8 +10,6 @@ import java.util.Date;
 
 /**
  * 合同对象 tb_contract
- *
- * @date 2021-05-24
  */
 public class TbContract extends BaseEntity {
     private static final long serialVersionUID = 1L;
@@ -136,15 +134,6 @@ public class TbContract extends BaseEntity {
         this.coursePrice = coursePrice;
     }
 
-//    public float getActivityDiscount() {
-//        return activityDiscount;
-//    }
-//
-//    public void setActivityDiscount(float activityDiscount) {
-//        this.activityDiscount = activityDiscount;
-//    }
-
-
     public String getDiscountType() {
         return discountType;
     }
@@ -244,13 +233,9 @@ public class TbContract extends BaseEntity {
 
     public enum AssigneeUser {
 
-
         Assignee1(137L, "xszgtest123", "销售主管"),
-
         Assignee2(152L, "zjltest", "总经理"),
-
         Assignee3(153L, "caiwuzhuguan", "财务主管");
-
 
         private Long id;
         private String name;

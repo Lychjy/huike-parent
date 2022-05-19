@@ -30,9 +30,9 @@ import com.huike.clues.service.ISysUserOnlineService;
 @RestController
 @RequestMapping("/monitor/online")
 public class SysUserOnlineController extends BaseController {
+
     @Autowired
     private ISysUserOnlineService userOnlineService;
-
     @Autowired
     private RedisCache redisCache;
 

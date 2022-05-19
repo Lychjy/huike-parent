@@ -3,6 +3,9 @@ package com.huike.clues.domain;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import com.huike.common.annotation.Excel;
@@ -10,11 +13,13 @@ import com.huike.common.core.domain.BaseEntity;
 
 /**
  * 活动管理对象 tb_activity
- *
- * @author wgl
- * @date 2021-04-02
  */
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class TbActivity extends BaseEntity {
+
     private static final long serialVersionUID = 1L;
 
     /**
@@ -74,94 +79,6 @@ public class TbActivity extends BaseEntity {
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private Date endTime;
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setChannel(String channel) {
-        this.channel = channel;
-    }
-
-    public String getChannel() {
-        return channel;
-    }
-
-    public void setInfo(String info) {
-        this.info = info;
-    }
-
-    public String getInfo() {
-        return info;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public Float getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(Float discount) {
-        this.discount = discount;
-    }
-
-    public void setVouchers(Integer vouchers) {
-        this.vouchers = vouchers;
-    }
-
-    public Integer getVouchers() {
-        return vouchers;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setBeginTime(Date beginTime) {
-        this.beginTime = beginTime;
-    }
-
-    public Date getBeginTime() {
-        return beginTime;
-    }
-
-    public void setEndTime(Date endTime) {
-        this.endTime = endTime;
-    }
-
-    public Date getEndTime() {
-        return endTime;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     @Override
     public String toString() {

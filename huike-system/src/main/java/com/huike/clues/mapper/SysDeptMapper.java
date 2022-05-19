@@ -32,7 +32,8 @@ public interface SysDeptMapper {
      * @param deptCheckStrictly 部门树选择项是否关联显示
      * @return 选中部门列表
      */
-    public List<Integer> selectDeptListByRoleId(@Param("roleId") Long roleId, @Param("deptCheckStrictly") boolean deptCheckStrictly);
+    public List<Integer> selectDeptListByRoleId(@Param("roleId") Long roleId,
+                                                @Param("deptCheckStrictly") boolean deptCheckStrictly);
 
     /**
      * 根据部门ID查询信息
@@ -81,7 +82,8 @@ public interface SysDeptMapper {
      * @param parentId 父部门ID
      * @return 结果
      */
-    public SysDept checkDeptNameUnique(@Param("deptName") String deptName, @Param("parentId") Long parentId);
+    public SysDept checkDeptNameUnique(@Param("deptName") String deptName,
+                                       @Param("parentId") Long parentId);
 
     /**
      * 新增部门信息

@@ -29,10 +29,8 @@ public class AdminClueStrategy implements Rule {
 
     @Autowired
     private TbAssignRecordMapper assignRecordMapper;
-
     @Autowired
     private SysUserMapper userMapper;
-
 
     private static SysUser ADMIN = new SysUser();
 

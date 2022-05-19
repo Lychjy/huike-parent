@@ -8,10 +8,9 @@ import com.huike.clues.domain.vo.IndexStatisticsVo;
 
 /**
  * 首页统计分析的Mapper
- *
- * @author Administrator
  */
 public interface ReportMapper {
+
     /**=========================================基本数据========================================*/
     /**
      * 获取线索数量

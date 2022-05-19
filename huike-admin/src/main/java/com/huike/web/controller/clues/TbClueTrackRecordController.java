@@ -20,8 +20,6 @@ import java.util.List;
 
 /**
  * 线索跟进记录Controller
- *
- * @date 2021-04-22
  */
 @RestController
 @RequestMapping("/clues/record")

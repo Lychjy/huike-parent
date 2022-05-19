@@ -32,44 +32,31 @@ import com.huike.common.utils.SecurityUtils;
 
 /**
  * 商机Service业务层处理
- *
- * @date 2021-04-25
  */
 @Service
 public class TbBusinessServiceImpl implements ITbBusinessService {
 
     @Autowired
     private Rule rule;
-
     @Autowired
     private TbBusinessMapper tbBusinessMapper;
-
     @Autowired
     private TbAssignRecordMapper tbAssignRecordMapper;
-
     @Autowired
     private TbBusinessTrackRecordMapper tbBusinessTrackRecordMapper;
-
     @Autowired
     private SysUserMapper userMapper;
-
     @Autowired
     ITbRulePoolService rulePoolService;
-
     @Autowired
     TbClueMapper tbClueMapper;
-
     @Autowired
     private ITbClueService tbClueService;
-
     @Autowired
     TbAssignRecordMapper assignRecordMapper;
 
     /**
      * 查询商机
-     *
-     * @param id 商机ID
-     * @return 商机
      */
     @Override
     public TbBusiness selectTbBusinessById(Long id) {
@@ -78,9 +65,6 @@ public class TbBusinessServiceImpl implements ITbBusinessService {
 
     /**
      * 查询商机列表
-     *
-     * @param tbBusiness 商机
-     * @return 商机
      */
     @Override
     @DataScope(deptAlias = "r", userAlias = "r")
@@ -96,9 +80,6 @@ public class TbBusinessServiceImpl implements ITbBusinessService {
 
     /**
      * 新增商机
-     *
-     * @param tbBusiness 商机
-     * @return 结果
      */
     @Override
     public int insertTbBusiness(TbBusiness tbBusiness) {
@@ -124,9 +105,6 @@ public class TbBusinessServiceImpl implements ITbBusinessService {
 
     /**
      * 修改商机
-     *
-     * @param tbBusiness 商机
-     * @return 结果
      */
     @Override
     public int updateTbBusiness(TbBusiness tbBusiness) {
@@ -135,9 +113,6 @@ public class TbBusinessServiceImpl implements ITbBusinessService {
 
     /**
      * 批量删除商机
-     *
-     * @param ids 需要删除的商机ID
-     * @return 结果
      */
     @Override
     public int deleteTbBusinessByIds(Long[] ids) {
@@ -146,9 +121,6 @@ public class TbBusinessServiceImpl implements ITbBusinessService {
 
     /**
      * 删除商机信息
-     *
-     * @param id 商机ID
-     * @return 结果
      */
     @Override
     public int deleteTbBusinessById(Long id) {
@@ -243,9 +215,6 @@ public class TbBusinessServiceImpl implements ITbBusinessService {
 
     /**
      * 转商机的方法
-     *
-     * @param clueId
-     * @return
      */
     @Override
     public int changeBusiness(Long clueId) {
@@ -275,10 +244,6 @@ public class TbBusinessServiceImpl implements ITbBusinessService {
 
     /**
      * 修改商机的状态
-     *
-     * @param clueId
-     * @param status
-     * @return
      */
     @Override
     public int updateStatus(Long clueId, String status) {

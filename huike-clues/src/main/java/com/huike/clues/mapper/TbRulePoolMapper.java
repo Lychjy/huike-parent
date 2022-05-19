@@ -6,9 +6,6 @@ import com.huike.clues.domain.TbRulePool;
 
 /**
  * 线索池规则Mapper接口
- *
- * @author wgl
- * @date 2021-04-16
  */
 public interface TbRulePoolMapper {
     /**

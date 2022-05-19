@@ -11,15 +11,12 @@ import com.huike.clues.service.ITbRulePoolService;
 
 /**
  * 线索池规则Service业务层处理
- *
- * @author wgl
- * @date 2021-04-16
  */
 @Service
 public class TbRulePoolServiceImpl implements ITbRulePoolService {
+
     @Autowired
     private TbRulePoolMapper tbRulePoolMapper;
-
     @Autowired
     private ISysDictDataService sysDictDataService;
 

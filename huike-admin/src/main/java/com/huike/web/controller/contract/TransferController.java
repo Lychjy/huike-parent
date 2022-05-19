@@ -33,11 +33,6 @@ public class TransferController extends BaseController {
 
     /**
      * 转派处理
-     *
-     * @param type
-     * @param userId
-     * @param transferUserId
-     * @return
      */
     @PreAuthorize("@ss.hasPermi('transfer:transfer:assignment')")
     @Log(title = "转派处理", businessType = BusinessType.UPDATE)

@@ -32,9 +32,11 @@ public interface SysDictDataMapper {
      * @param dictValue 字典键值
      * @return 字典标签
      */
-    public String selectDictLabel(@Param("dictType") String dictType, @Param("dictValue") String dictValue);
+    public String selectDictLabel(@Param("dictType") String dictType,
+                                  @Param("dictValue") String dictValue);
 
-    public String selectDictValue(@Param("dictType") String dictType, @Param("dictLabel") String dictLabel);
+    public String selectDictValue(@Param("dictType") String dictType,
+                                  @Param("dictLabel") String dictLabel);
 
 
     /**
@@ -92,5 +94,6 @@ public interface SysDictDataMapper {
      * @param newDictType 新旧字典类型
      * @return 结果
      */
-    public int updateDictDataType(@Param("oldDictType") String oldDictType, @Param("newDictType") String newDictType);
+    public int updateDictDataType(@Param("oldDictType") String oldDictType,
+                                  @Param("newDictType") String newDictType);
 }

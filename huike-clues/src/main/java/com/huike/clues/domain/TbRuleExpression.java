@@ -1,5 +1,8 @@
 package com.huike.clues.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import com.huike.common.annotation.Excel;
@@ -7,10 +10,12 @@ import com.huike.common.core.domain.BaseEntity;
 
 /**
  * 规则达式对象 tb_rule_expression
- *
- * @date 2021-04-08
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class TbRuleExpression extends BaseEntity {
+
     private static final long serialVersionUID = 1L;
 
     /**
@@ -47,54 +52,6 @@ public class TbRuleExpression extends BaseEntity {
      */
     @Excel(name = "规则id")
     private Long ruleId;
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setRuleKey(String ruleKey) {
-        this.ruleKey = ruleKey;
-    }
-
-    public String getRuleKey() {
-        return ruleKey;
-    }
-
-    public void setExpression(String expression) {
-        this.expression = expression;
-    }
-
-    public String getExpression() {
-        return expression;
-    }
-
-    public void setRuleValue(String ruleValue) {
-        this.ruleValue = ruleValue;
-    }
-
-    public String getRuleValue() {
-        return ruleValue;
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
-    public void setRuleId(Long ruleId) {
-        this.ruleId = ruleId;
-    }
-
-    public Long getRuleId() {
-        return ruleId;
-    }
 
     @Override
     public String toString() {

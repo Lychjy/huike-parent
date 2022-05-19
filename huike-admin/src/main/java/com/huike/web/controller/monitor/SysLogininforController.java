@@ -25,6 +25,7 @@ import com.huike.common.utils.poi.ExcelUtil;
 @RestController
 @RequestMapping("/monitor/logininfor")
 public class SysLogininforController extends BaseController {
+
     @Autowired
     private ISysLogininforService logininforService;
 

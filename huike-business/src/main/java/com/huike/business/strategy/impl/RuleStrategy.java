@@ -85,9 +85,6 @@ public class RuleStrategy implements Rule {
      * 1.意向学科是java的分配给lisi商机专员
      * 2.意向学科是前端的分配给lisi1商机专员
      * 3.如果没有匹配到规则则不分配等待管理员和主管来进行分配
-     *
-     * @param tbBusiness
-     * @return
      */
     @Override
     public Integer transforBusiness(TbBusiness tbBusiness) {
@@ -111,10 +108,6 @@ public class RuleStrategy implements Rule {
      * 看我能少走弯路！！！！！！！！！！！！
      * 这部分代码没有预设bug，不用研究
      * 该方法主要是将商机分配给具体的人的方法
-     *
-     * @param business
-     * @param user
-     * @return
      */
     private int distribute(TbBusiness business, SysUser user) {
         TbAssignRecord tbAssignRecord = new TbAssignRecord();

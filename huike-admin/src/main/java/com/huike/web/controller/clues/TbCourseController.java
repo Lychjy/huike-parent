@@ -23,8 +23,6 @@ import com.huike.common.enums.BusinessType;
 
 /**
  * 课程管理Controller
- *
- * @date 2021-04-01
  */
 @RestController
 @RequestMapping("/clues/course")
@@ -45,9 +43,7 @@ public class TbCourseController extends BaseController {
 
 
     /**
-     * @param subject
-     * @return
-     * @ApiOperation("课程下拉列表")
+     * 课程下拉列表
      */
     @GetMapping("/listselect")
     public AjaxResult list(String subject) {

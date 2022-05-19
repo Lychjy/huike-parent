@@ -33,6 +33,7 @@ import com.huike.common.utils.StringUtils;
 @RestController
 @RequestMapping("/system/dept")
 public class SysDeptController extends BaseController {
+
     @Autowired
     private ISysDeptService deptService;
 
@@ -80,7 +81,6 @@ public class SysDeptController extends BaseController {
     //@ApiOperation("获取部门下拉树列表")
     @GetMapping("/treeselect")
     public AjaxResult treeselect(SysDept dept) {
-        System.out.println(" treeselect----------------------");
         List<SysDept> depts = deptService.selectDeptList(dept);
         return AjaxResult.success(deptService.buildDeptTreeSelect(depts));
     }
@@ -91,7 +91,6 @@ public class SysDeptController extends BaseController {
     //@ApiOperation("获取对应角色部门列表树")
     @GetMapping(value = "/roleDeptTreeselect/{roleId}")
     public AjaxResult roleDeptTreeselect(@PathVariable("roleId") Long roleId) {
-        System.out.println(" roleDeptTreeselect----------------------");
         List<SysDept> depts = deptService.selectDeptList(new SysDept());
         AjaxResult ajax = AjaxResult.success();
         ajax.put("checkedKeys", deptService.selectDeptListByRoleId(roleId));

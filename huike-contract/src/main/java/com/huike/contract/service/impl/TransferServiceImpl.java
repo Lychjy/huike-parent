@@ -30,25 +30,18 @@ public class TransferServiceImpl implements ITransferService {
 
     @Autowired
     private ISysUserService userService;
-
     @Autowired
     private TbAssignRecordMapper assignRecordMapper;
-
     @Autowired
     private ITbRulePoolService rulePoolService;
-
     @Autowired
     private SysUserMapper sysUserMapper;
-
     @Autowired
     private TbClueMapper clueMapper;
-
-
     @Autowired
     private TbBusinessMapper businessMapper;
-
-//    @Autowired
-//    private SysUserMapper sysUserMapper;
+    //@Autowired
+    //private SysUserMapper sysUserMapper;
 
     @Override
     public List<TransferVo> selectTransferList(SysUser user) {

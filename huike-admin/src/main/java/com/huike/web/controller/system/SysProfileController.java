@@ -32,9 +32,9 @@ import com.huike.clues.service.ISysUserService;
 @RestController
 @RequestMapping("/system/user/profile")
 public class SysProfileController extends BaseController {
+
     @Autowired
     private ISysUserService userService;
-
     @Autowired
     private TokenService tokenService;
 

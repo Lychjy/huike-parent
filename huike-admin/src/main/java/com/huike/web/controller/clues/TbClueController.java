@@ -30,8 +30,6 @@ import com.huike.common.enums.BusinessType;
 
 /**
  * 线索管理Controller
- *
- * @date 2021-04-02
  */
 @RestController
 @RequestMapping("/clues/clue")
@@ -57,9 +55,6 @@ public class TbClueController extends BaseController {
 
     /**
      * 查询线索池
-     *
-     * @param tbClue
-     * @return
      */
     @PreAuthorize("@ss.hasPermi('clues:clue:pool')")
     @GetMapping("/pool")
@@ -101,9 +96,6 @@ public class TbClueController extends BaseController {
 
     /**
      * 线索转商机
-     *
-     * @param id
-     * @return
      */
     @PreAuthorize("@ss.hasPermi('clues:clue:changeBusiness')")
     @Log(title = "线索转商机", businessType = BusinessType.UPDATE)
@@ -115,9 +107,6 @@ public class TbClueController extends BaseController {
 
     /**
      * 批量分配
-     *
-     * @param assignmentVo
-     * @return
      */
     @PreAuthorize("@ss.hasPermi('clues:clue:assignment')")
     @Log(title = "批量分配", businessType = BusinessType.UPDATE)
@@ -128,9 +117,6 @@ public class TbClueController extends BaseController {
 
     /**
      * 批量捞取
-     *
-     * @param assignmentVo
-     * @return
      */
     @PreAuthorize("@ss.hasPermi('clues:clue:gain')")
     @Log(title = "批量捞取", businessType = BusinessType.UPDATE)
@@ -141,10 +127,6 @@ public class TbClueController extends BaseController {
 
     /**
      * 上传线索
-     *
-     * @param file
-     * @return
-     * @throws Exception
      */
     @Log(title = "上传线索", businessType = BusinessType.IMPORT)
     @PostMapping("/importData")

@@ -1,5 +1,8 @@
 package com.huike.clues.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import com.huike.common.annotation.Excel;
@@ -7,10 +10,12 @@ import com.huike.common.core.domain.BaseEntity;
 
 /**
  * 线索池规则对象 tb_rule_pool
- *
- * @date 2021-04-16
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class TbRulePool extends BaseEntity {
+
     private static final long serialVersionUID = 1L;
 
     /**
@@ -66,78 +71,6 @@ public class TbRulePool extends BaseEntity {
     @Excel(name = "0 线索 1 商机")
     private String type;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setLimitTime(Long limitTime) {
-        this.limitTime = limitTime;
-    }
-
-    public Long getLimitTime() {
-        return limitTime;
-    }
-
-    public void setLimitTimeType(String limitTimeType) {
-        this.limitTimeType = limitTimeType;
-    }
-
-    public String getLimitTimeType() {
-        return limitTimeType;
-    }
-
-    public void setWarnTime(Long warnTime) {
-        this.warnTime = warnTime;
-    }
-
-    public Long getWarnTime() {
-        return warnTime;
-    }
-
-    public void setWarnTimeType(String warnTimeType) {
-        this.warnTimeType = warnTimeType;
-    }
-
-    public String getWarnTimeType() {
-        return warnTimeType;
-    }
-
-    public void setRepeatGetTime(Long repeatGetTime) {
-        this.repeatGetTime = repeatGetTime;
-    }
-
-    public Long getRepeatGetTime() {
-        return repeatGetTime;
-    }
-
-    public void setRepeatType(String repeatType) {
-        this.repeatType = repeatType;
-    }
-
-    public String getRepeatType() {
-        return repeatType;
-    }
-
-    public void setMaxNunmber(Long maxNunmber) {
-        this.maxNunmber = maxNunmber;
-    }
-
-    public Long getMaxNunmber() {
-        return maxNunmber;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
     @Override
     public String toString() {
         return new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE)
@@ -154,21 +87,12 @@ public class TbRulePool extends BaseEntity {
     }
 
     public enum LimitTimeType {
-        /**
-         * 小时
-         */
+        /*小时*/
         HOUR("0"),
-
-        /**
-         * 天
-         */
+        /*天*/
         DAY("1"),
-
-        /**
-         * 周
-         */
+        /*周*/
         WEEK("2");
-
 
         private String value;
 
@@ -182,14 +106,9 @@ public class TbRulePool extends BaseEntity {
     }
 
     public enum RuleType {
-        /**
-         * 小时
-         */
+        /*小时*/
         CLUES("0"),
-
-        /**
-         * 天
-         */
+        /*天*/
         BUSINESS("1");
 
         private String value;

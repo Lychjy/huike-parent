@@ -34,9 +34,9 @@ import com.huike.framework.web.service.TokenService;
 @RestController
 @RequestMapping("/system/menu")
 public class SysMenuController extends BaseController {
+
     @Autowired
     private ISysMenuService menuService;
-
     @Autowired
     private TokenService tokenService;
 

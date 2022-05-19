@@ -40,36 +40,26 @@ import com.huike.common.utils.bean.BeanUtils;
 
 /**
  * 线索管理Service业务层处理
- *
- * @date 2021-04-02
  */
 @Service
 public class TbClueServiceImpl implements ITbClueService {
 
     @Autowired
     private Rule rule;
-
     @Autowired
     private TbClueMapper tbClueMapper;
-
     @Autowired
     private TbAssignRecordMapper assignRecordMapper;
-
     @Autowired
     private SysUserMapper userMapper;
-
     @Autowired
-    ITbRulePoolService rulePoolService;
-
+    private ITbRulePoolService rulePoolService;
     @Autowired
-    SysDictDataMapper sysDictDataMapper;
-
+    private SysDictDataMapper sysDictDataMapper;
     @Autowired
     private TbActivityMapper tbActivityMapper;
-
     @Autowired
     private ITbActivityService activityService;
-
     @Autowired
     private ITbClueService tbClueService;
 
@@ -394,9 +384,6 @@ public class TbClueServiceImpl implements ITbClueService {
 
     /**
      * 线索数据添加入库
-     *
-     * @param data
-     * @return
      */
     @Override
     public ImportResultDTO importCluesData(TbClueExcelVo data) {
@@ -442,6 +429,5 @@ public class TbClueServiceImpl implements ITbClueService {
          * 这个方法免费提供
          */
         return ImportResultDTO.success();
-
     }
 }

@@ -24,6 +24,7 @@ import com.huike.common.utils.SecurityUtils;
 @RestController
 @RequestMapping("/system/notice")
 public class SysNoticeController extends BaseController {
+
     @Autowired
     private ISysNoticeService noticeService;
 

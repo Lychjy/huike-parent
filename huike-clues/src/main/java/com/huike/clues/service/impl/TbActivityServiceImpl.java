@@ -20,14 +20,12 @@ import com.huike.common.utils.StringUtils;
 
 /**
  * 活动管理Service业务层处理
- *
- * @date 2021-04-01
  */
 @Service
 public class TbActivityServiceImpl implements ITbActivityService {
+
     @Autowired
     private TbActivityMapper tbActivityMapper;
-
     @Autowired
     private RedisCache redisCache;
 
@@ -136,8 +134,6 @@ public class TbActivityServiceImpl implements ITbActivityService {
 
     /**
      * 生成活动编号
-     *
-     * @return
      */
     private String getCode() {
         //随机8位编码

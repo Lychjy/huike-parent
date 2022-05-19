@@ -6,11 +6,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.concurrent.CompletableFuture;
 
 import com.huike.report.domain.vo.*;
 import org.springframework.beans.BeanUtils;
@@ -39,27 +37,18 @@ public class ReportServiceImpl implements IReportService {
 
     @Autowired
     private TbContractMapper contractMapper;
-
-
     @Autowired
     private SysDictDataMapper sysDictDataMapper;
-
-
     @Autowired
     private TbClueMapper clueMapper;
-
     @Autowired
     private TbActivityMapper activityMapper;
-
     @Autowired
     private TbBusinessMapper businessMapper;
-
     @Autowired
     private SysDeptMapper deptMapper;
-
     @Autowired
     private TbAssignRecordMapper assignRecordMapper;
-
     @Autowired
     private ReportMapper reportMpper;
 
@@ -68,7 +57,7 @@ public class ReportServiceImpl implements IReportService {
         LineChartVO lineChartVo = new LineChartVO();
         try {
             List<String> timeList = findDates(beginCreateTime, endCreateTime);
-            lineChartVo.setxAxis(timeList);
+            lineChartVo.setXAxis(timeList);
             List<LineSeriesVO> series = new ArrayList<>();
             List<Map<String, Object>> statistics = contractMapper.contractStatistics(beginCreateTime, endCreateTime);
             LineSeriesVO lineSeriesDTO1 = new LineSeriesVO();
@@ -101,7 +90,7 @@ public class ReportServiceImpl implements IReportService {
         LineChartVO lineChartVo = new LineChartVO();
         try {
             List<String> timeList = findDates(beginCreateTime, endCreateTime);
-            lineChartVo.setxAxis(timeList);
+            lineChartVo.setXAxis(timeList);
             List<LineSeriesVO> series = new ArrayList<>();
             List<Map<String, Object>> statistics = contractMapper.salesStatistics(beginCreateTime, endCreateTime);
             LineSeriesVO lineSeriesVo = new LineSeriesVO();
@@ -162,10 +151,6 @@ public class ReportServiceImpl implements IReportService {
 
     /**
      * 按照部门统计销售
-     *
-     * @param beginCreateTime
-     * @param endCreateTime
-     * @return
      */
     @Override
     public List<Map<String, Object>> deptStatisticsList(String beginCreateTime, String endCreateTime) {
@@ -183,10 +168,6 @@ public class ReportServiceImpl implements IReportService {
 
     /**
      * 按照渠道统计销售
-     *
-     * @param beginCreateTime
-     * @param endCreateTime
-     * @return
      */
     @Override
     public List<Map<String, Object>> channelStatisticsList(String beginCreateTime, String endCreateTime) {
@@ -204,10 +185,6 @@ public class ReportServiceImpl implements IReportService {
 
     /**
      * 按照归属人统计销售
-     *
-     * @param beginCreateTime
-     * @param endCreateTime
-     * @return
      */
     @Override
     public List<Map<String, Object>> ownerShipStatisticsList(String beginCreateTime, String endCreateTime) {
@@ -221,13 +198,13 @@ public class ReportServiceImpl implements IReportService {
     }
 
     @Override
-    public List<ActivityStatisticsVo> activityStatisticsList(TbActivity query) {
+    public List<ActivityStatisticsVO> activityStatisticsList(TbActivity query) {
         query.setStatus("2");
         List<TbActivity> activities = activityMapper.selectTbActivityList(query);
         Map<String, Object> timeMap = query.getParams();
-        List<ActivityStatisticsVo> list = new ArrayList<>();
+        List<ActivityStatisticsVO> list = new ArrayList<>();
         for (TbActivity activity : activities) {
-            ActivityStatisticsVo dto = new ActivityStatisticsVo();
+            ActivityStatisticsVO dto = new ActivityStatisticsVO();
             BeanUtils.copyProperties(activity, dto);
             TbClue tbClue = new TbClue();
             tbClue.setActivityId(activity.getId());
@@ -270,11 +247,6 @@ public class ReportServiceImpl implements IReportService {
     /**
      * *************看我看我**************
      * 传入两个时间范围，返回这两个时间范围内的所有时间，并保存在一个集合中
-     *
-     * @param beginTime
-     * @param endTime
-     * @return
-     * @throws ParseException
      */
     public static List<String> findDates(String beginTime, String endTime)
             throws ParseException {
@@ -302,7 +274,7 @@ public class ReportServiceImpl implements IReportService {
 
 
     @Override
-    public IndexVo getIndex(IndexStatisticsVo request) {
+    public IndexVO getIndex(IndexStatisticsVo request) {
         Long deptId = request.getDeptId();
         TbAssignRecord tbAssignRecord = new TbAssignRecord();
         tbAssignRecord.setLatest("1");
@@ -328,10 +300,6 @@ public class ReportServiceImpl implements IReportService {
      * ************看我看我***********
      * 用我能少走很多路
      * 我是用来机选百分比的方法
-     *
-     * @param all
-     * @param num
-     * @return
      */
     private BigDecimal getRadio(Integer all, Long num) {
         if (all.intValue() == 0) {
@@ -346,10 +314,6 @@ public class ReportServiceImpl implements IReportService {
 
     /**
      * 获取首页基本数据
-     *
-     * @param beginCreateTime
-     * @param endCreateTime
-     * @return
      */
     @Override
     public IndexBaseInfoVO getBaseInfo(String beginCreateTime, String endCreateTime) {

@@ -10,8 +10,6 @@ import org.apache.ibatis.annotations.Param;
 
 /**
  * 线索管理Mapper接口
- *
- * @date 2021-04-02
  */
 public interface TbClueMapper {
     /**
@@ -63,10 +61,12 @@ public interface TbClueMapper {
      */
     public int updateTbClue(TbClue tbClue);
 
-    public int resetNextTimeAndStatus(@Param("id") Long id, @Param("status") String status);
+    public int resetNextTimeAndStatus(@Param("id") Long id,
+                                      @Param("status") String status);
 
 
-    public int setTransfer(@Param("id") Long id, @Param("status") String status);
+    public int setTransfer(@Param("id") Long id,
+                           @Param("status") String status);
 
     /**
      * 删除线索管理
@@ -87,9 +87,6 @@ public interface TbClueMapper {
 
     /**
      * 根据渠道活动统计
-     *
-     * @param tbClue
-     * @return
      */
     public Map<String, Object> countByActivity(TbClue tbClue);
 
@@ -101,17 +98,15 @@ public interface TbClueMapper {
 
 
     public Map<String, Object> getcontractsBasicInfo(@Param("indexVo") IndexStatisticsVo request,
-                                                     @Param("now") String now, @Param("username") String username);
+                                                     @Param("now") String now,
+                                                     @Param("username") String username);
 
 
     /**
      * 统计线索数量
-     *
-     * @param request
-     * @param now
-     * @param username
-     * @return
      */
-    public int getCluesNum(@Param("indexVo") IndexStatisticsVo request, @Param("now") String now, @Param("username") String username);
+    public int getCluesNum(@Param("indexVo") IndexStatisticsVo request,
+                           @Param("now") String now,
+                           @Param("username") String username);
 
 }

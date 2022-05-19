@@ -28,8 +28,6 @@ import com.huike.common.utils.StringUtils;
 
 /**
  * 商机Controller
- *
- * @date 2021-04-25
  */
 @RestController
 @RequestMapping("/business")
@@ -37,7 +35,6 @@ public class TbBusinessController extends BaseController {
 
     @Autowired
     private ITbBusinessService tbBusinessService;
-
     @Autowired
     private ITbClueService tbClueService;
 

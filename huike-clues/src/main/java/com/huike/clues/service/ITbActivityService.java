@@ -7,8 +7,6 @@ import com.huike.clues.domain.TbActivity;
 
 /**
  * 活动管理Service接口
- *
- * @date 2021-04-01
  */
 public interface ITbActivityService {
     /**

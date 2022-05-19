@@ -9,6 +9,7 @@ import com.huike.common.utils.StringUtils;
  * 操作消息提醒
  */
 public class AjaxResult extends HashMap<String, Object> {
+
     private static final long serialVersionUID = 1L;
 
     /**
@@ -99,8 +100,6 @@ public class AjaxResult extends HashMap<String, Object> {
 
     /**
      * 返回错误消息
-     *
-     * @return
      */
     public static AjaxResult error() {
         return AjaxResult.error("操作失败");

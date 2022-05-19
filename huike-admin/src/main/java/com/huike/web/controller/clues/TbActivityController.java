@@ -24,9 +24,6 @@ import com.huike.common.enums.BusinessType;
 
 /**
  * 活动管理Controller
- *
- * @author wgl
- * @date 2021-04-01
  */
 @RestController
 @RequestMapping("/clues/activity")
@@ -50,9 +47,6 @@ public class TbActivityController extends BaseController {
 
     /**
      * 获取渠道下活动
-     *
-     * @param channel
-     * @return
      */
     @GetMapping("/listselect/{channel}")
     public AjaxResult list(@PathVariable("channel") String channel) {

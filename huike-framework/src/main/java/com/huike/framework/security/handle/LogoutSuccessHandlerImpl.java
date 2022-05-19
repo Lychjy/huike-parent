@@ -30,8 +30,6 @@ public class LogoutSuccessHandlerImpl implements LogoutSuccessHandler {
 
     /**
      * 退出处理
-     *
-     * @return
      */
     @Override
     public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication)

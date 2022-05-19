@@ -5,6 +5,9 @@ import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.huike.common.utils.DateUtils;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import com.huike.common.annotation.Excel;
@@ -12,9 +15,10 @@ import com.huike.common.core.domain.BaseEntity;
 
 /**
  * 线索管理对象 tb_clue
- *
- * @date 2021-04-02
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class TbClue extends BaseEntity {
     private static final long serialVersionUID = 1L;
 
@@ -137,15 +141,6 @@ public class TbClue extends BaseEntity {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private Date endTime;
 
-
-    public Date getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(Date endTime) {
-        this.endTime = endTime;
-    }
-
     /**
      * 创建人id
      */
@@ -157,191 +152,11 @@ public class TbClue extends BaseEntity {
 
     private String transfer; //是否转派 默认0
 
-    public String getTransfer() {
-        return transfer;
-    }
-
-    public void setTransfer(String transfer) {
-        this.transfer = transfer;
-    }
-
     public String getCreateTimeStr() {
         if (getCreateTime() != null) {
             this.createTimeStr = DateUtils.dateTime(getCreateTime());
         }
         return createTimeStr;
-    }
-
-    public void setCreateTimeStr(String createTimeStr) {
-        this.createTimeStr = createTimeStr;
-    }
-
-    public String getActivityName() {
-        return activityName;
-    }
-
-    public void setActivityName(String activityName) {
-        this.activityName = activityName;
-    }
-
-    public String getActivityInfo() {
-        return activityInfo;
-    }
-
-    public void setActivityInfo(String activityInfo) {
-        this.activityInfo = activityInfo;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setChannel(String channel) {
-        this.channel = channel;
-    }
-
-    public String getChannel() {
-        return channel;
-    }
-
-    public Long getActivityId() {
-        return activityId;
-    }
-
-    public void setActivityId(Long activityId) {
-        this.activityId = activityId;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public void setWeixin(String weixin) {
-        this.weixin = weixin;
-    }
-
-    public String getWeixin() {
-        return weixin;
-    }
-
-    public void setQq(String qq) {
-        this.qq = qq;
-    }
-
-    public String getQq() {
-        return qq;
-    }
-
-    public void setLevel(String level) {
-        this.level = level;
-    }
-
-    public String getLevel() {
-        return level;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-
-    public String getSubject() {
-        return subject;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setAssignBy(String assignBy) {
-        this.assignBy = assignBy;
-    }
-
-    public String getAssignBy() {
-        return assignBy;
-    }
-
-    public void setAssignTime(Date assignTime) {
-        this.assignTime = assignTime;
-    }
-
-    public Date getAssignTime() {
-        return assignTime;
-    }
-
-    public int getFalseCount() {
-        return falseCount;
-    }
-
-    public void setFalseCount(int falseCount) {
-        this.falseCount = falseCount;
-    }
-
-    public void setNextTime(Date nextTime) {
-        this.nextTime = nextTime;
-    }
-
-    public Date getNextTime() {
-        return nextTime;
-    }
-
-    public String getOwner() {
-        return owner;
-    }
-
-    public void setOwner(String owner) {
-        this.owner = owner;
-    }
-
-    public Date getOwnerTime() {
-        return ownerTime;
-    }
-
-    public void setOwnerTime(Date ownerTime) {
-        this.ownerTime = ownerTime;
     }
 
     @Override
@@ -374,7 +189,6 @@ public class TbClue extends BaseEntity {
 
     public enum StatusType {
 
-
         UNFOLLOWED("待跟进", "1"),
         FOLLOWING("跟进中", "2"),
         RECOVERY("回收", "3"),
@@ -401,15 +215,10 @@ public class TbClue extends BaseEntity {
     }
 
     public enum ImportDictType {
-
         CHANNEL("渠道来源", "clues_item"),
-
         SUBJECT("意向学科", "course_subject"),
-
         LEVEL("意向学科", "clues_level"),
-
         SEX("性别", "sys_user_sex");
-
 
         private String name;
         private String dictType;
@@ -427,8 +236,6 @@ public class TbClue extends BaseEntity {
             return dictType;
         }
     }
-
-
 }
 
 

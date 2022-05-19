@@ -7,8 +7,6 @@ import org.apache.ibatis.annotations.Param;
 
 /**
  * 线索分配记录Mapper接口
- *
- * @date 2021-04-19
  */
 public interface TbAssignRecordMapper {
     /**
@@ -65,10 +63,6 @@ public interface TbAssignRecordMapper {
 
     /**
      * 设置已经分配记录
-     *
-     * @param assignId
-     * @param type
-     * @return
      */
     public int updateLatest(@Param("assignId") Long assignId, @Param("type") String type);
 
@@ -78,17 +72,11 @@ public interface TbAssignRecordMapper {
 
     /**
      * 跟进用户Id统计分配线索数量
-     *
-     * @param userId
-     * @return
      */
     public int countAssignCluesByUser(@Param("userId") Long userId);
 
     /**
      * 跟进用户Id统计分配商机线索数量
-     *
-     * @param userId
-     * @return
      */
     public int countAssignBusinessByUser(@Param("userId") Long userId);
 

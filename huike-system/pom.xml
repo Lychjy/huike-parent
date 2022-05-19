@@ -11,12 +11,9 @@
 
     <artifactId>huike-system</artifactId>
 
-    <description>
-        system系统模块
-    </description>
+    <description>system系统模块</description>
 
     <dependencies>
-
         <!-- 通用工具-->
         <dependency>
             <groupId>com.huike</groupId>

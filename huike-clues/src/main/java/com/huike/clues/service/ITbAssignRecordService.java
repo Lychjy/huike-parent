@@ -7,7 +7,6 @@ import java.util.List;
 /**
  * 线索分配记录Service接口
  */
-
 public interface ITbAssignRecordService {
     /**
      * 查询线索分配记录

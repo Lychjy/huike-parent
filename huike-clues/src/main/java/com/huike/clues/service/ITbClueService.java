@@ -10,9 +10,6 @@ import com.huike.common.core.domain.entity.SysUser;
 
 /**
  * 线索管理Service接口
- *
- * @author wgl
- * @date 2021-04-02
  */
 public interface ITbClueService {
     /**
@@ -83,33 +80,21 @@ public interface ITbClueService {
 
     /**
      * 修改下次跟进时间及线索状态
-     *
-     * @param clueId
-     * @param status
-     * @return
      */
     public int updateStatus(Long clueId, String status);
 
     /**
      * 批量导入
-     *
-     * @param list
      */
     public Map<String, Integer> addTbClue(List<TbClueExcelVo> list);
 
     /**
      * 判断用户手机号是否存在
-     *
-     * @param phone
-     * @return
      */
     public boolean checkCluePhoneExis(String phone);
 
     /**
      * 批量导入数据
-     *
-     * @param data
-     * @return
      */
     ImportResultDTO importCluesData(TbClueExcelVo data);
 }

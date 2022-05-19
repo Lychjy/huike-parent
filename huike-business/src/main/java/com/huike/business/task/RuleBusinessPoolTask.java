@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 @Component("ruleBusinessPoolTask")
 public class RuleBusinessPoolTask {
 
-
     @Autowired
     private ITbBusinessService businessService;
 
@@ -28,8 +27,8 @@ public class RuleBusinessPoolTask {
     public void warn(String id) {
         TbBusiness business = businessService.selectTbBusinessById(Long.valueOf(id));
         if (business != null) {
-//            tbClue.setStatus("3");
-//            tbClueService.updateTbClue(tbClue);
+            //tbClue.setStatus("3");
+            //tbClueService.updateTbClue(tbClue);
         }
         System.out.println("-------------warn----" + business);
     }

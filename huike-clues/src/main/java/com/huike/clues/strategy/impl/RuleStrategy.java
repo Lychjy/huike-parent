@@ -28,15 +28,12 @@ public class RuleStrategy implements Rule {
 
     @Autowired
     private TbAssignRecordMapper assignRecordMapper;
-
     @Autowired
     private SysUserMapper userMapper;
-
     @Autowired
     private SysDictDataMapper dictDataMapper;
 
     private static SysUser zhangsan = new SysUser();
-
     private static SysUser zhangsan1 = new SysUser();
 
     //内存中JAVA学科的内容--提前预加载在内存中

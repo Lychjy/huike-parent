@@ -6,9 +6,6 @@ import com.huike.clues.domain.TbCourse;
 
 /**
  * 课程管理Service接口
- *
- * @author wgl
- * @date 2021-04-01
  */
 public interface ITbCourseService {
     /**

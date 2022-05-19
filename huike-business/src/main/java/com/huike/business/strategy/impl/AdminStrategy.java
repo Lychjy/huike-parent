@@ -33,10 +33,8 @@ public class AdminStrategy implements Rule {
 
     @Autowired
     private TbAssignRecordMapper assignRecordMapper;
-
     @Autowired
     private SysUserMapper userMapper;
-
 
     private static SysUser ADMIN = new SysUser();
 
@@ -47,8 +45,6 @@ public class AdminStrategy implements Rule {
 
     /**
      * 转商机时的方法
-     *
-     * @param business
      */
     @Override
     public Integer transforBusiness(TbBusiness business) {

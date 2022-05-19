@@ -1,11 +1,13 @@
 package com.huike.common.config;
 
+import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
  * 读取项目相关配置
  */
+@Data
 @Component
 @ConfigurationProperties(prefix = "huike")
 public class HuiKeConfig {
@@ -38,38 +40,6 @@ public class HuiKeConfig {
      * 获取地址开关
      */
     private static boolean addressEnabled;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getVersion() {
-        return version;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
-    }
-
-    public String getCopyrightYear() {
-        return copyrightYear;
-    }
-
-    public void setCopyrightYear(String copyrightYear) {
-        this.copyrightYear = copyrightYear;
-    }
-
-    public boolean isDemoEnabled() {
-        return demoEnabled;
-    }
-
-    public void setDemoEnabled(boolean demoEnabled) {
-        this.demoEnabled = demoEnabled;
-    }
 
     public static String getProfile() {
         return profile;

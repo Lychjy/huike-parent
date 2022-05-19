@@ -10,16 +10,11 @@ import com.huike.common.utils.spring.SpringUtils;
 
 /**
  * 获取结束时间的工具类
- *
- * @author 86150
  */
 public class HuiKeCrmDateUtils {
 
     /**
      * 根据规则获取结束时间
-     *
-     * @param tbAssignRecord
-     * @return
      */
     public static Date getEndDateByRule(TbAssignRecord tbAssignRecord) {
         ITbRulePoolService rulePoolService = SpringUtils.getBean(ITbRulePoolService.class);

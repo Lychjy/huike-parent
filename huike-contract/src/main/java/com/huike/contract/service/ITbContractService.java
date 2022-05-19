@@ -7,9 +7,6 @@ import com.huike.contract.domain.TbContract;
 
 /**
  * 合同Service接口
- *
- * @author wgl
- * @date 2021-05-19
  */
 public interface ITbContractService {
     /**
@@ -19,7 +16,6 @@ public interface ITbContractService {
      * @return 合同
      */
     public TbContract selectTbContractById(Long id);
-
 
     public List<TbContract> selectTbContract(TbContract queryConditon);
 
