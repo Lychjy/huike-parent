@@ -6,8 +6,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 /**
  * web容器中进行部署
  */
-public class HuiKeServletInitializer extends SpringBootServletInitializer {
-    @Override
+public class HuiKeServletInitializer{// extends SpringBootServletInitializer {
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(HuiKeApplication.class);
     }

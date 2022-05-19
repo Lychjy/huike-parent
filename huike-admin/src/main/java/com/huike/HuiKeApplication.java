@@ -14,7 +14,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 /**
  * 启动程序
  */
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
+@SpringBootApplication
 @EnableScheduling
 public class HuiKeApplication implements CommandLineRunner {
 
