@@ -25,75 +25,40 @@ import lombok.extern.slf4j.Slf4j;
 public class SysFileServiceImpl implements ISysFileService {
 
     @Autowired
-    MinioConfig minioConfig;
+    private MinioConfig minioConfig;
 
     /**
      * 文件上传至Minio
-     * 使用try catch finally进行上传
-     * finally里进行资源的回收
      */
     @Override
-    public AjaxResult upload(MultipartFile file) {
-        InputStream inputStream = null;
-        //创建Minio的连接对象
-        MinioClient minioClient = getClient();
+    public AjaxResult upload(MultipartFile file) throws IOException {
+        /**
+         * 创建Minio的连接对象
+         */
+        MinioClient minioClient = MinioClient.builder()
+                .endpoint(minioConfig.getEndpoint() + ":" + minioConfig.getPort())
+                .credentials(minioConfig.getAccessKey(), minioConfig.getSecretKey())
+                .build();
+
+        /**
+         * TODO 补全这部分代码
+         * 获取桶的名称，基于官网的内容，判断文件存储的桶是否存在 如果桶不存在就创建桶
+         */
         String bucketName = minioConfig.getBucketName();
-        try {
-            inputStream = file.getInputStream();
-            //基于官网的内容，判断文件存储的桶是否存在 如果桶不存在就创建桶
-            //TODO 补全这部分代码
-            /**
-             * ================================操作文件================================
-             * 思路：我们上传的文件是:合同.pdf
-             * 那么我们应该上传到配置的bucket内 我们配置的bucketName是huike-crm
-             * 那么我们存在桶里的文件应该是什么样的 也叫“合同.pdf”吗?
-             * 应该按照上传的年月日进行区分
-             * 举例：2021-05-05日进行上传的
-             * 那么存在桶里的路径应该是
-             * huike-crm/2021/05/05/这个目录下
-             * 而对于同一个文件，存在重名问题，所以我们应该利用UUID生成一个新的文件名，并拼接上 .pdf 作为文件后缀
-             * 那么完整的路径就是 huike-crm/2021/05/05/uuid.pdf
-             *
-             * 如果上述思路你无法理解，那么就直接存放在桶内生成uuid+.pdf即可
-             * 即：huike-crm/uuid.pdf
-             */
-            //TODO 基于上述逻辑补全代码
-            /**
-             * 构建返回结果集
-             */
-            AjaxResult ajax = AjaxResult.success();
-            /**
-             * 封装需要的数据进行返回
-             */
-            return ajax;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return AjaxResult.error("上传失败");
-        } finally {
-            //防止内存泄漏
-            if (inputStream != null) {
-                try {
-                    inputStream.close(); // 关闭流
-                } catch (IOException e) {
-                    log.debug("inputStream close IOException:" + e.getMessage());
-                }
-            }
-        }
-    }
 
 
-    /**
-     * 免费提供一个获取Minio连接的方法
-     * 获取Minio连接
-     *
-     * @return
-     */
-    private MinioClient getClient() {
-        MinioClient minioClient =
-                MinioClient.builder()
-                        .endpoint("http://" + minioConfig.getEndpoint() + ":" + minioConfig.getPort())
-                        .credentials(minioConfig.getAccessKey(), minioConfig.getSecretKey())
-                        .build();
-        return minioClient;
+        /**
+         * TODO 补全这部分代码
+         * 思路：我们上传的文件是[合同.pdf]，那么我们应该上传到配置的bucket内 我们配置的bucketName是：huike
+         *      应该按照上传的文件需要按照年月日进行目录区分，并使用UUID解决文件重名问题
+         *          举例：2022-05-05日进行上传的
+         *          那么存在桶里的路径应该是：[/huike/2022/05/05/uuid.pdf]
+         */
+        InputStream inputStream = file.getInputStream();
+
+
+        //返回结果
+        return AjaxResult.success();
     }
+
 }

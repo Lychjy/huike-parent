@@ -3,6 +3,8 @@ package com.huike.clues.service;
 import com.huike.common.core.domain.AjaxResult;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+
 public interface ISysFileService {
 
     /**
@@ -11,6 +13,6 @@ public interface ISysFileService {
      * @param file
      * @return
      */
-    AjaxResult upload(MultipartFile file);
+    AjaxResult upload(MultipartFile file) throws IOException;
 
 }
