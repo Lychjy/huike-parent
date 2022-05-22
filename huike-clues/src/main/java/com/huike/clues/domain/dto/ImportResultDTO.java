@@ -15,7 +15,6 @@ public class ImportResultDTO {
 
     //成功数量
     private Integer successNum = 0;
-
     //失败数量
     private Integer failureNum = 0;
 
@@ -36,9 +35,8 @@ public class ImportResultDTO {
     /**
      * 该方法主要是将每次插入的结果与总的结果进行汇总时进行调用
      */
-    public ImportResultDTO addAll(ImportResultDTO data) {
+    public void addAll(ImportResultDTO data) {
         this.failureNum += data.getFailureNum();
         this.successNum += data.getSuccessNum();
-        return this;
     }
 }

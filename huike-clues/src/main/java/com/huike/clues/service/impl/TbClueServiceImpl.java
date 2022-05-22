@@ -389,44 +389,48 @@ public class TbClueServiceImpl implements ITbClueService {
     public ImportResultDTO importCluesData(TbClueExcelVo data) {
         //===============校验线索数据，封装属性，插入数据库，根据规则进行分配======================
         /**
+         * TODO 补全逻辑代码
          * 1 判断活动编号对应的活动是否存在
          * 1.1 如果活动编号不存在 即错误数据，不进行添加操作，返回错误 ImportResultDTO.error()
          * 1.2 如果活动编号存在 设置活动id
          */
-        //TODO 补全上述逻辑代码
+
         /**
+         * TODO 补全逻辑代码
          * 校验手机号和渠道是否为空
          * 如果为空证明是错误数据，不进行添加 返回error
          * return ImportResultDTO.error();
          */
-        //TODO 补全上述逻辑代码
+
         /**
+         * TODO 补全逻辑代码
          * 字典值的替换
          * 因为excel里传入的是中文名，需要替换成对应的字典值
          * 需要处理 学科 性别 意向级别
          */
-        //TODO 补全上述逻辑代码
+
         /**
+         * TODO 补全逻辑代码
          * 设置数据状态为待跟进
          * clue.setStatus(TbClue.StatusType.UNFOLLOWED.getValue());
          */
-        //TODO 补全上述逻辑代码
+
         /**
+         * TODO 补全逻辑代码
          * 将线索数据入库
          * 参考添加线索接口调用的mapper
          * 仅仅只插入到线索表中
          */
-        //TODO 补全上述逻辑代码
+
         /**
+         * TODO 补全逻辑代码
          * 根据规则动态分配线索给具体的销售人员
          * 利用策略模式来进行实现
          * rule.loadRule(clue);
          */
-        //TODO 补全上述逻辑代码
 
         /**
-         *分配完成 返回成功
-         * 这个方法免费提供
+         * 分配完成 返回成功
          */
         return ImportResultDTO.success();
     }

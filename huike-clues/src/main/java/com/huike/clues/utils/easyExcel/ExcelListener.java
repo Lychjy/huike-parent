@@ -1,12 +1,5 @@
 package com.huike.clues.utils.easyExcel;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
-
 import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;
 import com.huike.clues.domain.dto.ImportResultDTO;
@@ -18,22 +11,15 @@ import com.huike.clues.service.ITbClueService;
  */
 public class ExcelListener extends AnalysisEventListener<TbClueExcelVo> {
 
-    /**
-     * 利用构造方法获取对应的service
-     */
     public ITbClueService clueService;
-
-    private ImportResultDTO resultDTO;
+    private final ImportResultDTO resultDTO = new ImportResultDTO();
 
     /**
      * 提供带参构造方法，在这里需要通过构造方法的方式获取对应的service层
      * 谁调用这个监听器谁提供需要的service
-     *
-     * @param clueService
      */
     public ExcelListener(ITbClueService clueService) {
         this.clueService = clueService;
-        this.resultDTO = new ImportResultDTO();
     }
 
     /**
@@ -42,8 +28,10 @@ public class ExcelListener extends AnalysisEventListener<TbClueExcelVo> {
      */
     @Override
     public void invoke(TbClueExcelVo data, AnalysisContext context) {
-        ImportResultDTO addTbClue = clueService.importCluesData(data);
-        resultDTO.addAll(addTbClue);
+        //1. 调用添加线索的业务逻辑
+        ImportResultDTO addResult = clueService.importCluesData(data);
+        //2. 统计的处理结果（成功，失败多少条，用于前端页面的提示）
+        resultDTO.addAll(addResult);
     }
 
     /**
