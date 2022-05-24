@@ -17,4 +17,5 @@
         <result property="nextTime" column="next_time"/>
     </resultMap>
 
+
 </mapper>

@@ -25,8 +25,7 @@ public class CommonController extends BaseController {
      * 通用上传请求
      */
     @PostMapping("/common/upload")
-    public AjaxResult uploadFile(MultipartFile file) throws IOException {
-        // 上传文件路径
+    public AjaxResult uploadFile(MultipartFile file) throws Exception {
         return fileService.upload(file);
     }
 }

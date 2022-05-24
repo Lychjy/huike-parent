@@ -133,9 +133,7 @@ public class TbClueController extends BaseController {
     public AjaxResult importData(MultipartFile file) throws Exception {
         // 有个很重要的点 ExcelListener 不能被spring管理，要每次读取excel都要new, 然后里面用到 spring 的对象可以构造方法传进去
         ExcelListener excelListener = new ExcelListener(tbClueService);
-        // 写法3：
         EasyExcel.read(file.getInputStream(), TbClueExcelVo.class, excelListener).sheet().doRead();
         return AjaxResult.success(excelListener.getResult());
     }
-
 }

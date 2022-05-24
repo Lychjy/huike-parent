@@ -20,8 +20,6 @@ public class TbBusinessTrackRecordController extends BaseController {
 
     @Autowired
     private ITbBusinessTrackRecordService tbBusinessTrackRecordService;
-    @Autowired
-    private ISysDictDataService sysDictDataService;
 
     /**
      * 新增商机跟进记录
@@ -30,7 +28,6 @@ public class TbBusinessTrackRecordController extends BaseController {
     @Log(title = "商机跟进记录", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody BusinessTrackVo businessTrackVo) {
-
         return null;
     }
 
@@ -39,9 +36,7 @@ public class TbBusinessTrackRecordController extends BaseController {
      */
     @PreAuthorize("@ss.hasPermi('business:record:list')")
     @GetMapping("/list")
-    public AjaxResult list(@RequestParam("businessId") Long id) {
-
+    public AjaxResult list(@RequestParam("businessId") Long businessId) {
         return null;
     }
-
 }
