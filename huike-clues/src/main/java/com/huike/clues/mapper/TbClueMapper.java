@@ -108,5 +108,4 @@ public interface TbClueMapper {
     public int getCluesNum(@Param("indexVo") IndexStatisticsVo request,
                            @Param("now") String now,
                            @Param("username") String username);
-
 }

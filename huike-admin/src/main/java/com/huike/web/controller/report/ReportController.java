@@ -128,5 +128,4 @@ public class ReportController extends BaseController {
         List<ActivityStatisticsVO> list = reportService.activityStatisticsList(activity);
         return getDataTablePage(list);
     }
-
 }

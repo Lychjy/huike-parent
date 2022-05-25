@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.huike.common.core.domain.AjaxResult;
 import com.huike.report.service.IReportService;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @RestController
 @RequestMapping("/index")
 public class IndexController {

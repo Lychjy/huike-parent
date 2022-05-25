@@ -1,5 +1,6 @@
 package com.huike.report.service;
 
+import java.text.ParseException;
 import java.util.List;
 import java.util.Map;
 
@@ -75,6 +76,4 @@ public interface IReportService {
      * 首页基本数据展示
      */
     IndexBaseInfoVO getBaseInfo(String beginCreateTime, String endCreateTime);
-
-
 }
