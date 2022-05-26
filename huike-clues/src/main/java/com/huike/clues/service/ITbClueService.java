@@ -69,7 +69,9 @@ public interface ITbClueService {
      * @param clueList
      * @return 结果
      */
-    public Map<String, Integer> importClues(List<TbClue> clueList);
+    public default Map<String, Integer> importClues(List<TbClue> clueList) {
+        return null;
+    }
 
 
     public String assign(Long[] clueIds, Long userId);

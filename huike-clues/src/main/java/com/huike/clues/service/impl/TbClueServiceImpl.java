@@ -387,6 +387,9 @@ public class TbClueServiceImpl implements ITbClueService {
      */
     @Override
     public ImportResultDTO importCluesData(TbClueExcelVo data) {
+        TbClue clue = new TbClue();
+
+
         // 判断活动编号对应的活动是否存在
         // 验证是否存在这个用户
         // 特殊字段处理

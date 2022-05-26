@@ -122,6 +122,6 @@ xss:
 #admin策略 导入和转换全部交由admin来处理，由admin来分配线索和规则
 #rule策略 交由规则引擎来处理，项目一阶段不处理，单讲admin模式
 rule:
-  transfor: rule #转商机时的自动分配方式--rule基于规则来分配 admin先分配给管理员再进行二次分配
+  transfor: admin
   clue:
-    import: rule #导入时的自动分配方式--rule基于规则来分配 admin先分配给管理员再进行二次分配
+    import: admin
