@@ -10,8 +10,7 @@
         WHERE id IN (
             SELECT assign_id
             FROM `tb_assign_record`
-            WHERE DATE_FORMAT(create_time, '%Y-%m-%d') BETWEEN #{startTime}
-                AND #{endTime}
+            WHERE DATE_FORMAT(create_time, '%Y-%m-%d') BETWEEN #{startTime} AND #{endTime}
               AND `type` = 0
               AND `latest` = 1
               AND `user_name` = #{username}
